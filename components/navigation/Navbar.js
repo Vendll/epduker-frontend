@@ -552,7 +552,7 @@ const Navbar = () => {
               aria-label="Global"
             >
               <Popover.Group className="flex lg:hidden border-y border-gray-200">
-                <div className="h-full  flex flex-col space-y-3 my-4 ml-6">
+                <div className="h-full  flex flex-col space-y-3 my-4">
                   {navigations.categories.map((category) => (
                     <Popover key={category.name} className="flex relative">
                       {({ open }) => (
@@ -563,7 +563,7 @@ const Navbar = () => {
                                 open
                                   ? "text-epgreen"
                                   : "text-gray-700 hover:text-epgreen",
-                                "relative z-10 text-lg flex items-center justify-center transition-colors focus:outline-none ease-out duration-200 text-lg font-medium"
+                                "relative z-10 text-lg ml-6 flex items-center justify-center transition-colors focus:outline-none ease-out duration-200 text-lg font-medium"
                               )}
                             >
                               {category.name}
@@ -635,7 +635,7 @@ const Navbar = () => {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-lg font-medium text-gray-700 hover:text-epgreen"
+                      className="flex items-center ml-6 text-lg font-medium text-gray-700 hover:text-epgreen"
                     >
                       {page.name}
                     </a>
