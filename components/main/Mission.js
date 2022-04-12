@@ -4,29 +4,40 @@ import {
   LightningBoltIcon,
   MailIcon,
   ScaleIcon,
+  ClipboardCheckIcon,
+  ClockIcon,
+  ChartBarIcon,
+  ColorSwatchIcon,
 } from "@heroicons/react/outline";
 
 const transferFeatures = [
   {
     id: 1,
-    name: "Competitive exchange rates",
+    name: "Megfelelni a folyamatosan változó vevői elvárásoknak. ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: GlobeAltIcon,
+    icon: ClipboardCheckIcon,
   },
   {
     id: 2,
-    name: "No hidden fees",
+    name: "Vásárlóink gyors és pontos kiszolgálása.",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: ScaleIcon,
+    icon: ClockIcon,
   },
   {
     id: 3,
-    name: "Transfers are instant",
+    name: "A termékek, szolgáltatások minőségének legmagasabb szinten tartása.",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: LightningBoltIcon,
+    icon: ChartBarIcon,
+  },
+  {
+    id: 4,
+    name: "Legszélesebb termékkínálat nyújtása partnereink részére.",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: ColorSwatchIcon,
   },
 ];
 const communicationFeatures = [
@@ -56,22 +67,25 @@ const Mission = () => {
               Az Épduker Küldetése
             </h2>
             <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in, accusamus quisquam.
+              20 éves múlttal rendelkező építőanyag kereskedelemmel foglalkozó
+              kizárólag hazai tulajdonban lévő dinamikusan fejlődő vállalkozás.
             </p>
           </div>
 
           <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative">
-              <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-                Transfer funds world-wide
-              </h3>
               <p className="mt-3 text-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur minima sequi recusandae, porro maiores officia
-                assumenda aliquam laborum ab aliquid veritatis impedit odit
-                adipisci optio iste blanditiis facere. Totam, velit.
+                Kezdetben általános építőanyagok kereskedelmével indultunk, mint
+                falazóelemek, tetőcserepek, víz-és hőszigetelő rendszerek. Mára
+                azonban forgalmazott termékeink körét jelentősen kibővítve
+                egyedi építőanyag kereskedelmi szolgáltatást nyújtunk meglévő,
+                és új partnereinknek. Az Épduferr Zrt. ennek köszönhetően rövid
+                időn belül rohamos fejlődést ért el, és egyre meghatározóbb
+                szerepet tölt be a piacon.
               </p>
+              <h3 className="text-2xl font-semibold text-gray-900 tracking-tight sm:text-3xl mt-3">
+                Kiemelt célkitűzéseink:
+              </h3>
 
               <dl className="mt-10 space-y-10">
                 {transferFeatures.map((item) => (
