@@ -438,7 +438,7 @@ const Navbar = () => {
                                 className={classNames(
                                   open
                                     ? "text-epgreen"
-                                    : "text-gray-700 hover:text-gray-800",
+                                    : "text-gray-700 hover:text-epgreen",
                                   "relative z-10 flex items-center justify-center outline-none transition-colors ease-out duration-200 text-base font-medium"
                                 )}
                               >
@@ -511,7 +511,7 @@ const Navbar = () => {
                       <a
                         key={page.name}
                         href={page.href}
-                        className="flex items-center text-base font-medium text-gray-700 hover:text-gray-800"
+                        className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen"
                       >
                         {page.name}
                       </a>
@@ -554,7 +554,7 @@ const Navbar = () => {
               <Popover.Group className="flex lg:hidden border-y border-gray-200">
                 <div className="h-full  flex flex-col space-y-3 my-4 ml-6">
                   {navigations.categories.map((category) => (
-                    <Popover key={category.name} className="flex">
+                    <Popover key={category.name} className="flex relative">
                       {({ open }) => (
                         <>
                           <div className="relative flex">
@@ -562,7 +562,7 @@ const Navbar = () => {
                               className={classNames(
                                 open
                                   ? "text-epgreen"
-                                  : "text-gray-700 hover:text-gray-800",
+                                  : "text-gray-700 hover:text-epgreen",
                                 "relative z-10 text-lg flex items-center justify-center transition-colors focus:outline-none ease-out duration-200 text-lg font-medium"
                               )}
                             >
@@ -579,7 +579,7 @@ const Navbar = () => {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                           >
-                            <Popover.Panel className="fixed top-[7rem] border-y border-gray-200 inset-x-0 z-50">
+                            <Popover.Panel className="absolute w-screen pl-0 top-10 border-y border-gray-200  z-50">
                               <div className="relative bg-white">
                                 <div className="max-w-7xl mx-auto px-8">
                                   <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 py-4 text-lg text-gray-500">
@@ -635,7 +635,7 @@ const Navbar = () => {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-lg font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-lg font-medium text-gray-700 hover:text-epgreen"
                     >
                       {page.name}
                     </a>

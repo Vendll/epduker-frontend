@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const incentives = [
   {
@@ -38,8 +37,10 @@ const Szolgaltatasok = () => {
               className="text-center sm:flex sm:text-left lg:block lg:text-center"
             >
               <div className="sm:flex-shrink-0">
-                <div className="flow-root">
-                  <img
+                <div className="flow-root relative h-24 w-full">
+                  <Image
+                    objectFit="contain"
+                    layout="fill"
                     className="w-28 h-24 mx-auto"
                     src={incentive.imageSrc}
                     alt=""

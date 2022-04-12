@@ -1,4 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Link from "next/link";
+
 const posts = [
   {
     title: "Boost your conversion rate",
@@ -87,19 +88,21 @@ const Blog = () => {
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-indigo-600">
+                  <p className="text-sm font-medium text-epgreen">
                     <a href={post.category.href} className="hover:underline">
                       {post.category.name}
                     </a>
                   </p>
-                  <a href={post.href} className="block mt-2">
-                    <p className="text-xl font-semibold text-gray-900">
-                      {post.title}
-                    </p>
-                    <p className="mt-3 text-base text-gray-500">
-                      {post.description}
-                    </p>
-                  </a>
+                  <Link href={post.href}>
+                    <a className="block mt-2">
+                      <p className="text-xl font-semibold text-gray-900">
+                        {post.title}
+                      </p>
+                      <p className="mt-3 text-base text-gray-500">
+                        {post.description}
+                      </p>
+                    </a>
+                  </Link>
                 </div>
                 {/* <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
