@@ -170,7 +170,7 @@ const Mission = () => {
                     <div>
                       <button
                         type="submit"
-                        className="inline-flex justify-center py-3 w-full border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-epgreen border border-eplight hover:border-epgreen  focus:outline-none"
+                        className="inline-flex justify-center py-3 w-full shadow-sm text-base font-medium rounded-md text-white bg-epgreen border-2 border-white hover:border-epgreen  focus:outline-none"
                       >
                         Küldés
                       </button>

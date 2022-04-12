@@ -1,121 +1,151 @@
+import Image from "next/image";
+import ytong from "../../public/logocloud/ytong.png";
+import azzuro from "../../public/logocloud/azzuro.png";
+import bachl from "../../public/logocloud/bachl.png";
+import baumit from "../../public/logocloud/baumit.png";
+import bramac from "../../public/logocloud/bramac.png";
+import creaton from "../../public/logocloud/creaton.png";
+import knauf from "../../public/logocloud/knauf.png";
+import lasserberger from "../../public/logocloud/lasserberger.png";
+import leier from "../../public/logocloud/leier.png";
+import masterplast from "../../public/logocloud/masterplast.png";
+import redline from "../../public/logocloud/redline.png";
+import tondach from "../../public/logocloud/tondach.png";
+import wienerberger from "../../public/logocloud/wienerberger.png";
+import terran from "../../public/logocloud/terran.png";
+
 const BrandsCloud = () => {
   return (
     <div className="bg-white">
       <div className="max-w-[96rem] mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <p className="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
-          Trusted by over 5 very average small businesses
+          Tekintse meg partnereinket!
         </p>
-        <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:grid-cols-8 lg:mt-8">
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+        <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:grid-cols-7 lg:mt-8">
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
+              src={ytong}
               alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-              alt="Mirage"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-              alt="Tuple"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-              alt="Laravel"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-              alt="Statamic"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
+              src={azzuro}
               alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-              alt="Mirage"
+              src={bachl}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-              alt="Tuple"
+              src={baumit}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-              alt="Laravel"
+              src={bramac}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
+              src={creaton}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-              alt="Statamic"
+              src={knauf}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-              alt="Tuple"
+              src={lasserberger}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-              alt="Laravel"
+              src={leier}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
+              src={masterplast}
+              alt="Workcation"
             />
           </div>
-          <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-              alt="Statamic"
+              src={redline}
+              alt="Workcation"
+            />
+          </div>
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              className="max-h-12"
+              src={tondach}
+              alt="Workcation"
+            />
+          </div>
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              className="max-h-12"
+              src={wienerberger}
+              alt="Workcation"
+            />
+          </div>
+          <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              className="max-h-12"
+              src={terran}
+              alt="Workcation"
             />
           </div>
         </div>
