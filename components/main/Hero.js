@@ -36,7 +36,7 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-12 text-center">
+          <div className="absolute bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-center">
             <p className="text-8xl text-white ">ÉpDuKker</p>
             <p className="text-5xl text-white ">
               Félelmetes képleírás, amit mindenki imád!
@@ -49,7 +49,9 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-12 text-8xl text-white absolute">Slide 2</p>
+          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+            Slide 2
+          </p>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
           <img
@@ -57,7 +59,9 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-12 text-8xl text-white absolute">Slide 3</p>
+          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+            Slide 3
+          </p>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
           <img
@@ -65,7 +69,9 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-12 text-8xl text-white absolute">Slide 4</p>
+          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+            Slide 4
+          </p>
         </SwiperSlide>
       </Swiper>
     </>
