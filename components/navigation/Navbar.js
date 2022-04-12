@@ -376,7 +376,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link href="/">
                       <a className="flex">
-                        <span className="sr-only">Workflow</span>
+                        <span className="sr-only">Épduker</span>
                         <Image
                           src={logoPic}
                           layout="fixed"

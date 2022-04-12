@@ -39,9 +39,9 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] ">
-            <p className="text-8xl text-white ">ÉpDuKker</p>
-            <p className="text-3xl text-white font-thin">
+          <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+            <p className="text-6xl md:text-8xl text-white ">ÉpDuKker</p>
+            <p className="text-2xl md:text-3xl text-white font-thin">
               Félelmetes képleírás, amit mindenki imád!
             </p>
           </div>
@@ -54,9 +54,11 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] ">
-            <p className="text-8xl text-white ">Slide 2</p>
-            <p className="text-5xl text-white ">Valami dummy text</p>
+          <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+            <p className="text-6xl md:text-8xl text-white">Slide 2</p>
+            <p className="text-2xl md:text-3xl text-white font-thin">
+              Valami dummy text
+            </p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
@@ -67,9 +69,11 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] ">
-            <p className="text-8xl text-white ">Slide 3</p>
-            <p className="text-5xl text-white ">Mégegy dummy text</p>
+          <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+            <p className="text-6xl md:text-8xl text-white">Slide 3</p>
+            <p className="text-2xl md:text-3xl text-white font-thin">
+              Mégegy dummy text
+            </p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
@@ -80,9 +84,11 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] ">
-            <p className="text-8xl text-white ">Slide 4</p>
-            <p className="text-5xl text-white ">Ennyi dummy text nincs is</p>
+          <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+            <p className="text-6xl md:text-8xl text-white">Slide 4</p>
+            <p className="text-2xl md:text-3xl text-white font-thin">
+              Ennyi dummy text nincs is
+            </p>
           </div>
         </SwiperSlide>
       </Swiper>

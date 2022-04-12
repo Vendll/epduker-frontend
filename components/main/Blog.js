@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const posts = [
   {
@@ -77,11 +78,12 @@ const Blog = () => {
           {posts.map((post) => (
             <div
               key={post.title}
-              className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+              className="flex flex-col rounded-lg shadow-lg hover:shadow-2xl overflow-hidden"
             >
-              <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
+              <div className="flex-shrink-0 h-48 relative">
+                <Image
+                  objectFit="cover"
+                  layout="fill"
                   src={post.imageUrl}
                   alt=""
                 />

@@ -21,7 +21,7 @@ const BrandsCloud = () => {
         <p className="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
           Tekintse meg partnereinket!
         </p>
-        <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:grid-cols-7 lg:mt-8">
+        <div className="mt-6 grid grid-cols-2 gap-x-0.5 gap-y-3 justify-center md:grid-cols-4 lg:grid-cols-7 lg:mt-8">
           <div className="relative col-span-1 flex justify-center py-8 px-8 bg-white">
             <Image
               objectFit="contain"
