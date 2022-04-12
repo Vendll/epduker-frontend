@@ -519,8 +519,12 @@ const Navbar = () => {
                   </div>
                 </Popover.Group>
                 <div className="float-right flex gap-2 text-2xl">
-                  <FaFacebook />
-                  <FaInstagram />
+                  <a className="hover:text-epgreen" href="#">
+                    <FaFacebook />
+                  </a>
+                  <a className="hover:text-epgreen" href="#">
+                    <FaInstagram />
+                  </a>
                 </div>
                 {/* <NavItem item={navigations} /> */}
                 {/* {navigation.map((item) => (
