@@ -36,7 +36,7 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-center">
+          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center">
             <p className="text-8xl text-white ">ÉpDuKker</p>
             <p className="text-5xl text-white ">
               Félelmetes képleírás, amit mindenki imád!
@@ -49,7 +49,7 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center text-8xl text-white absolute">
             Slide 2
           </p>
         </SwiperSlide>
@@ -59,7 +59,7 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center text-8xl text-white absolute">
             Slide 3
           </p>
         </SwiperSlide>
@@ -69,7 +69,7 @@ const Hero = () => {
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 left-12 w-[40vw] text-8xl text-white absolute">
+          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center text-8xl text-white absolute">
             Slide 4
           </p>
         </SwiperSlide>
