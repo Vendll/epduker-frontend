@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import {
   Dialog,
   Popover,
@@ -517,7 +518,10 @@ const Navbar = () => {
                     ))}
                   </div>
                 </Popover.Group>
-
+                <div className="float-right flex gap-2 text-2xl">
+                  <FaFacebook />
+                  <FaInstagram />
+                </div>
                 {/* <NavItem item={navigations} /> */}
                 {/* {navigation.map((item) => (
                   <Link href={item.href} key={item.id}>
