@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Keyboard } from "swiper";
 import boltPic from "../../public/bolt.jpg";
+import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,48 +31,59 @@ const Hero = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        <SwiperSlide className=" grid justify-items-center ">
-          <img
+        <SwiperSlide className="grid justify-items-center ">
+          <Image
+            objectFit="cover"
+            layout="fill"
             src="https://picsum.photos/seed/a/1600/900"
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] ">
+          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center">
             <p className="text-8xl text-white ">ÉpDuKker</p>
-            <p className="text-3xl text-white ">
+            <p className="text-5xl text-white ">
               Félelmetes képleírás, amit mindenki imád!
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
-          <img
+          <Image
+            objectFit="cover"
+            layout="fill"
             src="https://picsum.photos/seed/b/1920/1080"
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw]  text-8xl text-white absolute">
-            Slide 2
-          </p>
+          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center">
+            <p className="text-8xl text-white ">Slide 2</p>
+            <p className="text-5xl text-white ">Valami dummy text</p>
+          </div>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
-          <img
+          <Image
+            objectFit="cover"
+            layout="fill"
             src="https://picsum.photos/seed/c/1366/768"
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw]  text-8xl text-white absolute">
-            Slide 3
-          </p>
+          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center">
+            <p className="text-8xl text-white ">Slide 3</p>
+            <p className="text-5xl text-white ">Mégegy dummy text</p>
+          </div>
         </SwiperSlide>
         <SwiperSlide className="grid justify-items-center">
-          <img
+          <Image
+            objectFit="cover"
+            layout="fill"
             src="https://picsum.photos/seed/a/1600/900"
             className="object-cover h-full w-full"
             alt="bolt"
           />
-          <p className="bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw]  text-8xl text-white absolute">
-            Slide 4
-          </p>
+          <div className="absolute bottom-[50%] translate-y-1/2 lg:left-12 w-screen lg:w-[40vw] text-center">
+            <p className="text-8xl text-white ">Slide 4</p>
+            <p className="text-5xl text-white ">Ennyi dummy text nincs is</p>
+          </div>
         </SwiperSlide>
       </Swiper>
     </>
