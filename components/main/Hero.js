@@ -32,22 +32,21 @@ const Hero = () => {
         onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="grid justify-items-center ">
-          <div className="absolute w-full h-full bg-black opacity-90">
-            <Image
-              objectFit="cover"
-              layout="fill"
-              src={SAPic}
-              className="object-cover h-full w-full"
-              alt="bolt"
-            />
-            <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
-              <p className="text-6xl md:text-6xl text-[#f4f4f4]">
-                Építőipari kereskedés
-              </p>
-              <p className="text-2xl md:text-3xl text-[#f4f4f4] font-thin">
-                Mindent egy helyen
-              </p>
-            </div>
+          <div className="absolute w-full h-full z-10 right-0 top-0 bg-black opacity-40"></div>
+          <Image
+            objectFit="cover"
+            layout="fill"
+            src={SAPic}
+            className="object-cover h-full w-full"
+            alt="bolt"
+          />
+          <div className="absolute bottom-[50%] z-10 px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+            <p className="text-6xl md:text-6xl text-[#f4f4f4]">
+              Építőipari kereskedés
+            </p>
+            <p className="text-2xl md:text-3xl text-[#f4f4f4] font-thin">
+              Mindent egy helyen
+            </p>
           </div>
         </SwiperSlide>
         {/* <SwiperSlide className="grid justify-items-center">
