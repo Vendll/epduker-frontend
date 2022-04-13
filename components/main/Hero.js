@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Keyboard } from "swiper";
-import boltPic from "../../public/bolt.jpg";
+import SAPic from "../../public/DJI_0139.jpeg";
 import Image from "next/image";
 
 import "swiper/css";
@@ -35,7 +35,7 @@ const Hero = () => {
           <Image
             objectFit="cover"
             layout="fill"
-            src="https://picsum.photos/seed/a/1600/900"
+            src={SAPic}
             className="object-cover h-full w-full"
             alt="bolt"
           />
