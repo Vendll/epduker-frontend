@@ -115,7 +115,7 @@ const Mission = () => {
                   <form className="grid gap-y-6">
                     <div>
                       <label htmlFor="full-name" className="sr-only">
-                        Full name
+                        Név
                       </label>
                       <input
                         value=""
@@ -124,7 +124,7 @@ const Mission = () => {
                         id="name"
                         autoComplete="name"
                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:outline-none focus:ring-epgreen focus:border-epgreen border border-gray-300 rounded-md"
-                        placeholder="Full name"
+                        placeholder="Név"
                       />
                     </div>
                     <div>
@@ -143,7 +143,7 @@ const Mission = () => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="sr-only">
-                        Phone
+                        Telefonszám
                       </label>
                       <input
                         type="text"
@@ -151,19 +151,19 @@ const Mission = () => {
                         id="phone"
                         autoComplete="tel"
                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:outline-none focus:ring-epgreen focus:border-epgreen border border-gray-300 rounded-md"
-                        placeholder="Phone +36701234567"
+                        placeholder="Telefonszám"
                       />
                     </div>
                     <div>
                       <label htmlFor="message" className="sr-only">
-                        Message
+                        Üzenet
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         rows={4}
                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:outline-none focus:ring-epgreen focus:border-epgreen border border border-gray-300 rounded-md"
-                        placeholder="Message"
+                        placeholder="Üzenet"
                         defaultValue={""}
                       />
                     </div>

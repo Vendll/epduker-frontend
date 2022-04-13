@@ -32,21 +32,25 @@ const Hero = () => {
         onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="grid justify-items-center ">
-          <Image
-            objectFit="cover"
-            layout="fill"
-            src={SAPic}
-            className="object-cover h-full w-full"
-            alt="bolt"
-          />
-          <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
-            <p className="text-6xl md:text-8xl text-white ">ÉpDuKker</p>
-            <p className="text-2xl md:text-3xl text-white font-thin">
-              Félelmetes képleírás, amit mindenki imád!
-            </p>
+          <div className="absolute w-full h-full bg-black opacity-90">
+            <Image
+              objectFit="cover"
+              layout="fill"
+              src={SAPic}
+              className="object-cover h-full w-full"
+              alt="bolt"
+            />
+            <div className="absolute bottom-[50%] px-12 md:px-0 translate-y-1/2 md:left-12 w-screen lg:w-[40vw] ">
+              <p className="text-6xl md:text-6xl text-[#f4f4f4]">
+                Építőipari kereskedés
+              </p>
+              <p className="text-2xl md:text-3xl text-[#f4f4f4] font-thin">
+                Mindent egy helyen
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="grid justify-items-center">
+        {/* <SwiperSlide className="grid justify-items-center">
           <Image
             objectFit="cover"
             layout="fill"
@@ -90,7 +94,7 @@ const Hero = () => {
               Ennyi dummy text nincs is
             </p>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );
