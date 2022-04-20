@@ -32,7 +32,7 @@ const Hero = () => {
         onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="grid justify-items-center ">
-          <div className="absolute w-full h-full z-10 right-0 top-0 bg-black opacity-40"></div>
+          <div className="absolute w-full h-full z-10 right-0 top-0 bg-black opacity-25"></div>
           <Image
             objectFit="cover"
             layout="fill"

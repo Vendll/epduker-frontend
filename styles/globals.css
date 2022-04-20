@@ -17,3 +17,8 @@ a {
 * {
   box-sizing: border-box;
 }
+.h-notfound {
+  --footer: 200px;
+  --header: 121px;
+  height: calc(100vh - var(--header) - var(--footer));
+}

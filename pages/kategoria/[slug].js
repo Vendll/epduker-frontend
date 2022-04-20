@@ -364,7 +364,7 @@ export default function Example() {
                             value={size}
                             className={({ active }) =>
                               classNames(
-                                active ? "ring-2 ring-indigo-500" : "",
+                                active ? "ring-2 ring-epgreen" : "",
                                 "relative block border border-gray-300 rounded-lg p-4 cursor-pointer focus:outline-none"
                               )
                             }
@@ -387,7 +387,7 @@ export default function Example() {
                                   className={classNames(
                                     active ? "border" : "border-2",
                                     checked
-                                      ? "border-indigo-500"
+                                      ? "border-epgreen"
                                       : "border-transparent",
                                     "absolute -inset-px rounded-lg pointer-events-none"
                                   )}
@@ -415,7 +415,7 @@ export default function Example() {
                   <div className="mt-10">
                     <button
                       type="submit"
-                      className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                      className="w-full bg-epgreen border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-epgray focus:outline-none focus:ring-offset-0 focus:ring-0"
                     >
                       Add to bag
                     </button>
