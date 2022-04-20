@@ -1,25 +1,30 @@
 import Image from "next/image";
+import iconOne from "../../public/forklift.png";
+import iconTwo from "../../public/credit-card-2.png";
+import iconThree from "../../public/delivery.png";
+import iconFour from "../../public/consultation.png";
 
 const incentives = [
   {
-    name: "Free Shipping",
-    description:
-      "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce/icons/icon-delivery-light.svg",
+    name: "Építőipari termékek értékesítése",
+    description: "Tekintse meg széles termékkínálatunkat.",
+    imageSrc: iconOne,
   },
   {
-    name: "24/7 Customer Support",
+    name: "Bankkártyás fizetés",
     description:
-      "Our AI chat widget is powered by a naive series of if/else statements. Guaranteed to irritate.",
-    imageSrc: "https://tailwindui.com/img/ecommerce/icons/icon-chat-light.svg",
+      "Természetesen nálunk is biztosított az elektronikus fizetés lehetősége.",
+    imageSrc: iconTwo,
   },
   {
-    name: "Fast Shopping Cart",
-    description:
-      "Look how fast that cart is going. What does this mean for the actual experience? I don't know.",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce/icons/icon-fast-checkout-light.svg",
+    name: "Kiszállítás",
+    description: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
+    imageSrc: iconThree,
+  },
+  {
+    name: "Pályázati tanácsadás",
+    description: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
+    imageSrc: iconFour,
   },
 ];
 
@@ -27,10 +32,10 @@ const Szolgaltatasok = () => {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto sm:px-2 lg:px-4">
-        <div className="text-center text-5xl pb-8 pt-16 font-bold text-zinc-500">
+        <div className="text-center text-5xl pb-8 pt-16 font-bold text-gray-900">
           Szolgáltatásaink
         </div>
-        <div className="max-w-2xl mx-auto px-4 grid grid-cols-1 gap-y-10 pb-16 gap-x-8 lg:max-w-none lg:grid-cols-3">
+        <div className="max-w-2xl mx-auto px-4 grid grid-cols-1 gap-y-10 pb-16 gap-x-8 lg:max-w-none lg:grid-cols-4">
           {incentives.map((incentive) => (
             <div
               key={incentive.name}
