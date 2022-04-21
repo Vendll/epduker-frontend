@@ -22,3 +22,7 @@ a {
   --header: 121px;
   height: calc(100vh - var(--header) - var(--footer));
 }
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(181 200 56) !important;
+}
