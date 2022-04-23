@@ -1,22 +1,5 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { useState } from "react";
-import { Dialog, RadioGroup } from "@headlessui/react";
+import { useState, Fragment } from "react";
+import { Dialog, RadioGroup, Transition } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/outline";
 import { CheckIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid";
 
@@ -47,7 +30,7 @@ function classNames(...classes) {
 export default function Example() {
   const [open, setOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="bg-gray-50">
@@ -153,7 +136,7 @@ export default function Example() {
                             value={size}
                             className={({ active }) =>
                               classNames(
-                                active ? "ring-2 ring-indigo-500" : "",
+                                active ? "ring-2 ring-epgreen" : "",
                                 "relative block border border-gray-300 rounded-lg p-4 cursor-pointer focus:outline-none"
                               )
                             }
@@ -176,7 +159,7 @@ export default function Example() {
                                   className={classNames(
                                     active ? "border" : "border-2",
                                     checked
-                                      ? "border-indigo-500"
+                                      ? "border-epgreen"
                                       : "border-transparent",
                                     "absolute -inset-px rounded-lg pointer-events-none"
                                   )}
@@ -202,30 +185,134 @@ export default function Example() {
                     </a>
                   </div>
                   <div className="mt-10">
-                    <Dialog open={open} onClose={() => setOpen(false)}>
-                      <Dialog.Overlay />
-
-                      <Dialog.Title>Deactivate account</Dialog.Title>
-                      <Dialog.Description>
-                        This will permanently deactivate your account
-                      </Dialog.Description>
-
-                      <p>
-                        Are you sure you want to deactivate your account? All of
-                        your data will be permanently removed. This action
-                        cannot be undone.
-                      </p>
-
-                      <button onClick={() => setOpen(false)}>Deactivate</button>
-                      <button onClick={() => setOpen(false)}>Cancel</button>
-                    </Dialog>
                     <button
-                      type="submit"
-                      className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                      onClick={() => setIsOpen(true)}
+                      type="button"
+                      className="w-full bg-epgreen border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-epgreen focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-epgreen"
                     >
-                      Add to bag
+                      Megrendelem
                     </button>
                   </div>
+                  <Transition show={isOpen} as={Fragment}>
+                    <Dialog
+                      as="div"
+                      className="fixed inset-0 z-10 overflow-y-auto transition-all backdrop-blur-sm ease-out duration-300"
+                      onClose={() => setIsOpen(false)}
+                    >
+                      <div className="min-h-screen px-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0"
+                          enterTo="opacity-100"
+                          leave="ease-in duration-100"
+                          leaveFrom="opacity-100"
+                          leaveTo="opacity-0"
+                        >
+                          <Dialog.Overlay className="fixed inset-0" />
+                        </Transition.Child>
+
+                        {/* This element is to trick the browser into centering the modal contents. */}
+                        <span
+                          className="inline-block h-screen align-middle"
+                          aria-hidden="true"
+                        >
+                          &#8203;
+                        </span>
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
+                        >
+                          <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                            <Dialog.Title
+                              as="h3"
+                              className="text-lg font-medium leading-6 text-gray-900"
+                            >
+                              Payment successful
+                            </Dialog.Title>
+                            <form
+                              className="grid gap-y-6"
+                              /* onSubmit={handleSubmit} */
+                            >
+                              <div>
+                                <label htmlFor="full-name" className="sr-only">
+                                  Full name
+                                </label>
+                                <input
+                                  /* onChange={handleChange} */
+                                  /* value={name} */
+                                  type="text"
+                                  name="name"
+                                  id="name"
+                                  autoComplete="name"
+                                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-epgreen focus:border-epgreen border-gray-300 rounded-md"
+                                  placeholder="Full name"
+                                />
+                              </div>
+                              <div>
+                                <label htmlFor="email" className="sr-only">
+                                  Email
+                                </label>
+                                <input
+                                  /* onChange={handleChange} */
+                                  /* value={email} */
+                                  id="email"
+                                  name="email"
+                                  type="email"
+                                  autoComplete="email"
+                                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-epgreen focus:border-epgreen border-gray-300 rounded-md"
+                                  placeholder="Email"
+                                />
+                              </div>
+                              <div>
+                                <label htmlFor="phone" className="sr-only">
+                                  Phone
+                                </label>
+                                <input
+                                  /* onChange={handleChange} */
+                                  /* value={phone} */
+                                  type="text"
+                                  name="phone"
+                                  id="phone"
+                                  autoComplete="tel"
+                                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-epgreen focus:border-epgreen border-gray-300 rounded-md"
+                                  placeholder="Phone +36701234567"
+                                />
+                              </div>
+                              <div>
+                                <label htmlFor="message" className="sr-only">
+                                  Message
+                                </label>
+                                <textarea
+                                  /* onChange={handleChange} */
+                                  /* value={message} */
+                                  id="message"
+                                  name="message"
+                                  rows={4}
+                                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-epgreen focus:border-epgreen border border-gray-300 rounded-md"
+                                  placeholder="Message"
+                                  defaultValue={""}
+                                />
+                              </div>
+                              <div>
+                                <button
+                                  type="submit"
+                                  className="inline-flex justify-center py-3 w-full border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-epgreen hover:border-epgray focus:outline-none"
+                                >
+                                  Submit
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </Transition.Child>
+                      </div>
+                    </Dialog>
+                  </Transition>
                   <div className="mt-6 text-center">
                     <a
                       href="#"
