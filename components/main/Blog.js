@@ -60,7 +60,7 @@ const posts = [
 
 const Blog = () => {
   return (
-    <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div className="relative bg-gray-50 pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8">
       <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3" />
       </div>
@@ -134,6 +134,12 @@ const Blog = () => {
             </div>
           ))}
         </div>
+        <button
+          type="submit"
+          className="my-16 py-3 w-full border-2 border-gray-50 hover:shadow-xl hover:border-epgreen text-lg font-medium rounded-md text-white bg-epgreen focus:outline-none"
+        >
+          Összes hírünk
+        </button>
       </div>
     </div>
   );
