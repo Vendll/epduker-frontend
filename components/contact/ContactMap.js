@@ -4,7 +4,7 @@ import contactPic from "../../public/DJI_0139.jpeg";
 const ContactMap = () => {
   return (
     <>
-      <div className="relative py-16 bg-white">
+      <div className="relative lg:py-16 bg-white">
         <div
           className="hidden absolute top-0 inset-x-0 h-1/2 bg-white lg:block rounded-3xl"
           aria-hidden="true"
@@ -29,7 +29,7 @@ const ContactMap = () => {
               </div>
             </div>
 
-            <div className="relative h-60 sm:h-full lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+            <div className="relative h-60 lg:h-full mt-6 lg:mt-0 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5446.225061138273!2d18.912507!3d46.959479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47421741b9b32b5f%3A0x392f24b52abb66e3!2zRHVuYcO6anbDoXJvcywgQnVkYWkgTmFneSBBbnRhbCDDunQgMSwgMjQwMA!5e0!3m2!1shu!2shu!4v1650736003378!5m2!1shu!2shu"
                 width="100%"

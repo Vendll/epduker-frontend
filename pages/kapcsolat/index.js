@@ -20,7 +20,7 @@ const ContactsUsPage = ({ page }) => {
         <Image src={contactPic} layout="fill" objectFit="cover" alt="Contact" />
     </div> */}
       <div className="relative bg-white ">
-        <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+        <div className="relative max-w-7xl mx-auto mt-6 lg:grid lg:grid-cols-5">
           <ContactBody />
           <ContactForm />
         </div>
