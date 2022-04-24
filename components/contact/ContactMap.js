@@ -11,13 +11,13 @@ const ContactMap = () => {
         />
         <div className="max-w-7xl mx-auto  lg:px-8">
           <div className="lg:grid lg:grid-cols-12">
-            <div className="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
+            <div className="relative z-10 pointer-events-none lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-28 lg:bg-transparent">
               <div
                 className="absolute inset-x-0 h-1/2 bg-white lg:hidden"
                 aria-hidden="true"
               />
-              <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0 rounded-3xl">
-                <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
+              <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-sm lg:p-0 rounded-3xl">
+                <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-h-2 lg:aspect-w-3">
                   <Image
                     className="rounded-3xl  bg-white"
                     src={contactPic}
