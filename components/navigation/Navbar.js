@@ -187,10 +187,10 @@ const navigations = {
     },
   ],
   pages: [
-    { name: "Kezdőlap", href: "#" },
+    { name: "Kezdőlap", href: "/" },
     { name: "Szolgáltatások", href: "#" },
-    { name: "Állásajánlatok", href: "#" },
-    { name: "Kapcsolat", href: "#" },
+    { name: "Állásajánlatok", href: "/allasajanlatok" },
+    { name: "Kapcsolat", href: "/kapcsolat" },
   ],
 };
 
@@ -305,16 +305,16 @@ const navigations = {
 }
 
 const navigation = [
-  { name: "Kezdőlap", href: "#", current: true },
+  { name: "Kezdőlap", href: "/", current: true },
   {
     name: "Termékek",
-    href: "#",
+    href: "/termekek",
     current: false,
     categories: { data: [1, 2, 3, 4, 5] },
   },
   { name: "Szolgáltatások", href: "#", current: false },
-  { name: "Állásajánlatok", href: "#", current: false },
-  { name: "Kapcsolat", href: "#", current: false },
+  { name: "Állásajánlatok", href: "/allasajanlatok", current: false },
+  { name: "Kapcsolat", href: "/kapcsolat", current: false },
 ];
 const solutions = [
   {
@@ -508,13 +508,11 @@ const Navbar = () => {
                     ))}
 
                     {navigations.pages.map((page) => (
-                      <a
-                        key={page.name}
-                        href={page.href}
-                        className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen"
-                      >
-                        {page.name}
-                      </a>
+                      <Link key={page.name} href={page.href}>
+                        <a className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen">
+                          {page.name}
+                        </a>
+                      </Link>
                     ))}
                   </div>
                 </Popover.Group>
@@ -607,12 +605,11 @@ const Navbar = () => {
                                                     key={item.name}
                                                     className="flex ml-3"
                                                   >
-                                                    <a
-                                                      href={item.href}
-                                                      className="hover:text-gray-800"
-                                                    >
-                                                      {item.name}
-                                                    </a>
+                                                    <Link href={item.href}>
+                                                      <a className="hover:text-gray-800">
+                                                        {item.name}
+                                                      </a>
+                                                    </Link>
                                                   </li>
                                                 ))}
                                               </ul>
@@ -632,13 +629,11 @@ const Navbar = () => {
                   ))}
 
                   {navigations.pages.map((page) => (
-                    <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center ml-6 text-lg font-medium text-gray-700 hover:text-epgreen"
-                    >
-                      {page.name}
-                    </a>
+                    <Link key={page.name} href={page.href}>
+                      <a className="flex items-center ml-6 text-lg font-medium text-gray-700 hover:text-epgreen">
+                        {page.name}
+                      </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Group>
