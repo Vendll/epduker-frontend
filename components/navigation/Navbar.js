@@ -455,7 +455,7 @@ const Navbar = () => {
                               leaveFrom="opacity-100"
                               leaveTo="opacity-0"
                             >
-                              <Popover.Panel className="absolute top-[6.3rem] inset-x-0 z-50">
+                              <Popover.Panel className="absolute top-[7.5rem] border-y border-gray-200 inset-x-0 z-50">
                                 <div className="relative bg-white">
                                   <div className="max-w-7xl mx-auto px-8">
                                     <div className="grid grid-cols-3 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
