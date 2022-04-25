@@ -1,6 +1,6 @@
 import { Directus } from "@directus/sdk";
 
-function ProductPage({ product }) {
+function BrandProductPage({ product }) {
   return (
     <>
       <h1>{product.title}</h1>
@@ -34,14 +34,16 @@ export async function getStaticPaths() {
   });
 
   const products = productsData.data;
+  console.log("====================================");
+  console.log("hey");
+  console.log("====================================");
 
   return {
     paths: products.map((product) => {
       return {
         params: {
-          kategoria: product.category.category.slug,
-          alkategoria: product.category.slug,
-          termek: product.slug,
+          marka: product.brand.slug,
+          markatermek: product.slug,
         },
       };
     }),
@@ -49,4 +51,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default ProductPage;
+export default BrandProductPage;
