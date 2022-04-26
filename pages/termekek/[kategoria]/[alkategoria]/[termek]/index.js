@@ -3,8 +3,11 @@ import { Directus } from "@directus/sdk";
 function ProductPage({ product }) {
   return (
     <>
-      {/* <h1>{product.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: product.description }} /> */}
+      {/* <h1 className="hidden">{product.title}</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: product.description }}
+        className="hidden"
+      /> */}
       <div className="border-t border-gray-200">
         <main>
           {/* Product */}
@@ -56,12 +59,12 @@ function ProductPage({ product }) {
                 </div> */}
 
                   <div className="mt-4 space-y-6">
-                    <p
-                      className="text-base text-gray-500"
+                    <div
                       dangerouslySetInnerHTML={{ __html: product.description }}
+                      className="text-base text-gray-500"
                     >
                       {/* {product.description} */}
-                    </p>
+                    </div>
                   </div>
 
                   {/* <div className="mt-6 flex items-center">
