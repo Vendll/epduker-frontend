@@ -1,23 +1,31 @@
+import servicesPic from "../../public/service.jpg";
+import Image from "next/image";
+import Link from "next/link";
+
 const collections = [
   {
     name: "Women's",
     href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-04-collection-01.jpg",
+    imageSrc: "/forklift.png",
     imageAlt: "Woman wearing an off-white cotton t-shirt.",
   },
   {
     name: "Men's",
     href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-04-collection-02.jpg",
+    imageSrc: "/credit-card-2.png",
     imageAlt: "Man wearing a charcoal gray cotton t-shirt.",
   },
   {
     name: "Desk Accessories",
     href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-04-collection-03.jpg",
+    imageSrc: "/delivery.png",
+    imageAlt:
+      "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
+  },
+  {
+    name: "Desk Accessories",
+    href: "#",
+    imageSrc: "/consultation.png",
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
   },
@@ -37,8 +45,10 @@ export default function Example() {
       >
         <div className="flex-1 relative w-full bg-gray-800">
           <div className="absolute inset-0 overflow-hidden">
-            <img
-              src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
+            <Image
+              src={servicesPic}
+              layout="fill"
+              objectFit="cover"
               alt=""
               className="w-full h-full object-center object-cover"
             />
@@ -68,16 +78,8 @@ export default function Example() {
         </div>
         <div className="relative py-32">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Mid-Season Sale
+            Szolgáltatásaink
           </h1>
-          <div className="mt-4 sm:mt-6">
-            <a
-              href="#"
-              className="inline-block bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
-            >
-              Shop Collection
-            </a>
-          </div>
         </div>
       </div>
 
@@ -88,7 +90,7 @@ export default function Example() {
         <h2 id="collection-heading" className="sr-only">
           Collections
         </h2>
-        <div className="max-w-md mx-auto grid grid-cols-1 gap-y-6 px-4 sm:max-w-7xl sm:px-6 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:px-8 lg:gap-x-8">
+        <div className="max-w-md mx-auto grid grid-cols-1 gap-y-6 px-4 sm:max-w-7xl sm:px-6 sm:grid-cols-4 sm:gap-y-0 sm:gap-x-6 lg:px-8 lg:gap-x-8">
           {collections.map((collection) => (
             <div
               key={collection.name}
@@ -100,10 +102,11 @@ export default function Example() {
                   className="absolute inset-0 rounded-lg overflow-hidden"
                 >
                   <div className="absolute inset-0 overflow-hidden group-hover:opacity-75">
-                    <img
+                    <Image
                       src={collection.imageSrc}
+                      layout="fill"
+                      objectFit="contain"
                       alt={collection.imageAlt}
-                      className="w-full h-full object-center object-cover"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50" />
