@@ -6,21 +6,18 @@ const collections = [
   {
     name: "Építőipari termékek értékesítése",
     desc: "Tekintse meg széles termékkínálatunkat.",
-    href: "#",
     imageSrc: "/forklift.png",
     imageAlt: "Woman wearing an off-white cotton t-shirt.",
   },
   {
     name: "Bankkártyás fizetés",
     desc: "Természetesen nálunk is biztosított az elektronikus fizetés lehetősége.",
-    href: "#",
     imageSrc: "/credit-card-2.png",
     imageAlt: "Man wearing a charcoal gray cotton t-shirt.",
   },
   {
     name: "Kiszállítás",
     desc: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
-    href: "#",
     imageSrc: "/delivery.png",
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
@@ -28,7 +25,6 @@ const collections = [
   {
     name: "Pályázati tanácsadás",
     desc: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
-    href: "#",
     imageSrc: "/consultation.png",
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
@@ -121,10 +117,8 @@ export default function Example() {
                       {collection.name}
                     </p>
                     <h3 className="mt-1 text-epgray">
-                      <a href={collection.href}>
-                        <span className="absolute inset-0" />
-                        {collection.desc}
-                      </a>
+                      <span className="absolute inset-0" />
+                      {collection.desc}
                     </h3>
                   </div>
                 </div>
