@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div
-      className="h-notfound bg-cover bg-top sm:bg-top flex items-center"
+      className="h-notfound min-h-[20rem] bg-cover bg-top sm:bg-top flex items-center"
       style={{
         backgroundImage: 'url("/DJI_0139.jpeg")',
       }}
