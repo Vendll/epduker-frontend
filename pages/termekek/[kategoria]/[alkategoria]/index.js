@@ -316,10 +316,10 @@ export async function getStaticProps({ params }) {
     },
   });
   const products = productData.data;
-  console.log("=============products=================");
+  /*   console.log("=============products=================");
   console.log(productData);
   console.log("====================================");
-  return {
+ */ return {
     props: {
       subcategory,
       products,
@@ -334,10 +334,10 @@ export async function getStaticPaths() {
   });
 
   const subcategories = subCategoryData.data;
-  console.log("================slug================");
+  /*   console.log("================slug================");
   console.log(subcategories[0].category.slug);
   console.log("====================================");
-
+ */
   return {
     paths: subcategories.map((subcategory) => {
       return {
