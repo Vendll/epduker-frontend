@@ -4,26 +4,30 @@ import Link from "next/link";
 
 const collections = [
   {
-    name: "Women's",
+    name: "Építőipari termékek értékesítése",
+    desc: "Tekintse meg széles termékkínálatunkat.",
     href: "#",
     imageSrc: "/forklift.png",
     imageAlt: "Woman wearing an off-white cotton t-shirt.",
   },
   {
-    name: "Men's",
+    name: "Bankkártyás fizetés",
+    desc: "Természetesen nálunk is biztosított az elektronikus fizetés lehetősége.",
     href: "#",
     imageSrc: "/credit-card-2.png",
     imageAlt: "Man wearing a charcoal gray cotton t-shirt.",
   },
   {
-    name: "Desk Accessories",
+    name: "Kiszállítás",
+    desc: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
     href: "#",
     imageSrc: "/delivery.png",
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
   },
   {
-    name: "Desk Accessories",
+    name: "Pályázati tanácsadás",
+    desc: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
     href: "#",
     imageSrc: "/consultation.png",
     imageAlt:
@@ -101,7 +105,7 @@ export default function Example() {
                   aria-hidden="true"
                   className="absolute inset-0 rounded-lg overflow-hidden"
                 >
-                  <div className="absolute inset-0 overflow-hidden group-hover:opacity-75">
+                  <div className="absolute inset-12 overflow-hidden group-hover:opacity-75">
                     <Image
                       src={collection.imageSrc}
                       layout="fill"
@@ -109,17 +113,17 @@ export default function Example() {
                       alt={collection.imageAlt}
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20" />
                 </div>
                 <div className="absolute inset-0 rounded-lg p-6 flex items-end">
                   <div>
-                    <p aria-hidden="true" className="text-sm text-white">
-                      Shop the collection
+                    <p aria-hidden="true" className="font-semibold text-epgray">
+                      {collection.name}
                     </p>
-                    <h3 className="mt-1 font-semibold text-white">
+                    <h3 className="mt-1 text-epgray">
                       <a href={collection.href}>
                         <span className="absolute inset-0" />
-                        {collection.name}
+                        {collection.desc}
                       </a>
                     </h3>
                   </div>
