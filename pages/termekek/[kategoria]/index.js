@@ -4,6 +4,7 @@ import { Dialog, Disclosure, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import Image from "next/image";
 
 const filters = [
   {
@@ -268,10 +269,12 @@ function CategoryPage({ category, subcategories, products }) {
                       key={product.id}
                       className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
                     >
-                      <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                        <img
+                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
+                        <Image
                           src={product.imageSrc}
                           alt={product.imageAlt}
+                          layout="fill"
+                          objectFit="cover"
                           className="w-full h-full object-center object-cover sm:w-full sm:h-full"
                         />
                       </div>

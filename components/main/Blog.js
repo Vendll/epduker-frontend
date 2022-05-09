@@ -135,7 +135,7 @@ const Blog = () => {
             </div>
           ))}
         </div>
-        <Link href="/blog">
+        <Link href="/blog" passHref>
           <button
             type="submit"
             className="my-16 py-3 w-full border-2 border-gray-50 hover:shadow-xl hover:border-epgreen text-lg font-medium rounded-md text-white bg-epgreen focus:outline-none"

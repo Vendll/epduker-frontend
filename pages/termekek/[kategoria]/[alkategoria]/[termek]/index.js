@@ -1,4 +1,5 @@
 import { Directus } from "@directus/sdk";
+import Image from "next/image";
 
 function ProductPage({ product }) {
   return (
@@ -81,8 +82,10 @@ function ProductPage({ product }) {
 
               {/* Product image */}
               <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-                <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                  <img
+                <div className="relative aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
+                  <Image
+                    layout="fill"
+                    objectFit="cover"
                     src={product.imageSrc}
                     alt="kép helye" /* {product.imageAlt} */
                     className="w-full h-full object-center object-cover"

@@ -2,6 +2,7 @@ import { useState, Fragment } from "react";
 import { Dialog, RadioGroup, Transition } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/outline";
 import { CheckIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 
 const product = {
   name: "POROTHERM 30 KLÍMA TÉGLA",
@@ -103,10 +104,12 @@ export default function Example() {
 
             {/* Product image */}
             <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-              <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                <img
+              <div className="relative aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
+                <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
+                  layout="fill"
+                  objectFit="cover"
                   className="w-full h-full object-center object-cover"
                 />
               </div>

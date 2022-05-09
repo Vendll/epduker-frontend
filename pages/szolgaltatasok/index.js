@@ -66,7 +66,9 @@ export default function Example() {
         >
           <div className="flex-1 relative w-full bg-gray-800">
             <div className="absolute inset-0 overflow-hidden">
-              <img
+              <Image
+                layout="fill"
+                objectFit="cover"
                 src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
                 alt=""
                 className="w-full h-full object-center object-cover"
