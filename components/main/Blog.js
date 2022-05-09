@@ -1,3 +1,4 @@
+import { Directus } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 
