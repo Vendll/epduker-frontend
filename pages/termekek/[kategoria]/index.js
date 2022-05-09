@@ -176,6 +176,7 @@ function CategoryPage({ category, subcategories, products }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {subcategories.map((subcategory) => (
                 <Link
+                  key={subcategory.id}
                   href={`/termekek/${encodeURIComponent(
                     category.slug
                   )}/${encodeURIComponent(subcategory.slug)}`}

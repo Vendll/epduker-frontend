@@ -34,7 +34,7 @@ const ContactMap = () => {
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5446.225061138273!2d18.912507!3d46.959479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47421741b9b32b5f%3A0x392f24b52abb66e3!2zRHVuYcO6anbDoXJvcywgQnVkYWkgTmFneSBBbnRhbCDDunQgMSwgMjQwMA!5e0!3m2!1shu!2shu!4v1650736003378!5m2!1shu!2shu"
                 width="100%"
                 className="h-full absolute inset-0 rounded-3xl border-[3px] border-epgreen"
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
