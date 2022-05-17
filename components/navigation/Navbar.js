@@ -188,6 +188,7 @@ const navigations = {
   ],
   pages: [
     { name: "Kezdőlap", href: "/" },
+    { name: "Termékek", href: "#" },
     { name: "Szolgáltatások", href: "/szolgaltatasok" },
     { name: "Állásajánlatok", href: "/allasajanlatok" },
     { name: "Kapcsolat", href: "/kapcsolat" },
