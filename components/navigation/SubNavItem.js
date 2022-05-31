@@ -27,11 +27,13 @@ const SubNavItem = ({ column, category }) => {
           </li>
         ))}
       </ul>
-      {open ? (
-        <button onClick={() => setOpen(false)}>Több mutatása</button>
-      ) : (
-        <button onClick={() => setOpen(true)}>Bezárás</button>
-      )}
+      {column.subcategories.length > 3 ? (
+        open ? (
+          <button onClick={() => setOpen(false)}>Több mutatása</button>
+        ) : (
+          <button onClick={() => setOpen(true)}>Bezárás</button>
+        )
+      ) : null}
     </>
   );
 };
