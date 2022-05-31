@@ -27,10 +27,15 @@ const SubNavItem = ({ column, category }) => {
           </li>
         ))}
       </ul>
+
       {open ? (
-        <button onClick={() => setOpen(false)}>Több mutatása</button>
+        <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
+          Több mutatása
+        </button>
       ) : (
-        <button onClick={() => setOpen(true)}>Bezárás</button>
+        <button onClick={() => setOpen(true)} className="text-epgreen mt-1">
+          Bezárás
+        </button>
       )}
     </>
   );
