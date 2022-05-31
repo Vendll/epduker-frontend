@@ -14,33 +14,27 @@ const SubNavItem = ({ column, category }) => {
   }, [open]);
   return (
     <>
-            
       <ul
         role="list"
         aria-labelledby={`${category.id}-${column.slug}-heading`}
         className="mt-2"
       >
-                
         {list.map((item) => (
           <li key={item.title} className="flex">
-                        
             <a href={item.slug} className="hover:text-gray-800">
-                            {item.title}
-                          
+              {item.title}
             </a>
-                      
           </li>
         ))}
-              
       </ul>
       {column.subcategories.length > 3 ? (
         open ? (
           <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
-                      Több mutatása         
+            Több mutatása
           </button>
         ) : (
           <button onClick={() => setOpen(true)} className="text-epgreen mt-1">
-                      Bezárás         
+            Bezárás
           </button>
         )
       ) : null}
