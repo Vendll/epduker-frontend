@@ -5,6 +5,7 @@ import { XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
+import Layout from "../../../../components/Layout";
 
 const filters = [
   {
@@ -52,7 +53,7 @@ function SubCategoryPage({ subcategory, products }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <>
+    <Layout>
       {/* <h1>Subcategories</h1>
       <ul>
         <li>{subcategory.title}</li>
@@ -295,7 +296,7 @@ function SubCategoryPage({ subcategory, products }) {
           </main>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

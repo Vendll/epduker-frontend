@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BlogBody from "../../components/blog/BlogDetailBody";
+import Layout from "../../components/Layout";
 
 const post = {
   title: "Boost your conversion rate",
@@ -22,20 +23,21 @@ const post = {
 
 const PostPage = () => {
   return (
-    <div className="bg-gray-50">
-      <div aria-hidden="true" className="relative h-96">
-        <Image
-          src={post.imageUrl}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-96 object-center object-cover"
-        />
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-white" /> */}
-      </div>
-      <BlogBody item={post} />
+    <Layout>
+      <div className="bg-gray-50">
+        <div aria-hidden="true" className="relative h-96">
+          <Image
+            src={post.imageUrl}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-96 object-center object-cover"
+          />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-white" /> */}
+        </div>
+        <BlogBody item={post} />
 
-      {/* <dl className="mt-16 max-w-2xl mx-auto grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
+        {/* <dl className="mt-16 max-w-2xl mx-auto grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
           {features.map((feature) => (
             <div key={feature.name} className="border-t border-gray-200 pt-4">
             <dt className="font-medium text-gray-900">{feature.name}</dt>
@@ -45,7 +47,8 @@ const PostPage = () => {
             </div>
             ))}
           </dl> */}
-    </div>
+      </div>
+    </Layout>
   );
 };
 

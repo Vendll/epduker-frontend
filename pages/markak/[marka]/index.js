@@ -5,6 +5,7 @@ import { XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
+import Layout from "../../../components/Layout";
 
 const filters = [
   {
@@ -51,7 +52,7 @@ function BrandPage({ brand, products }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <>
+    <Layout>
       {/* <ul>
         <li>{brand.title}</li>
       </ul>
@@ -293,7 +294,7 @@ function BrandPage({ brand, products }) {
           </main>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

@@ -1,9 +1,10 @@
 import { Directus } from "@directus/sdk";
 import Image from "next/image";
+import Layout from "../../../../../components/Layout";
 
 function ProductPage({ product }) {
   return (
-    <>
+    <Layout>
       {/* <h1 className="hidden">{product.title}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: product.description }}
@@ -180,7 +181,7 @@ function ProductPage({ product }) {
           </div>
         </main>
       </div>
-    </>
+    </Layout>
   );
 }
 

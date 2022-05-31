@@ -7,6 +7,7 @@ import Image from "next/image";
 import ContactForm from "../../components/contact/ContactForm";
 import ContactBody from "../../components/contact/ContactBody";
 import ContactMap from "../../components/contact/ContactMap";
+import Layout from "../../components/Layout";
 
 const ContactsUsPage = ({ page }) => {
   /* const router = useRouter();
@@ -14,7 +15,7 @@ const ContactsUsPage = ({ page }) => {
     return <div>Loading...</div>;
   } */
   return (
-    <>
+    <Layout>
       {/* <SeoHead seo={page.attributes.seo} /> */}
       {/* <div className="h-[36rem] w-1/3 relative ">
         <Image src={contactPic} layout="fill" objectFit="cover" alt="Contact" />
@@ -26,7 +27,7 @@ const ContactsUsPage = ({ page }) => {
         </div>
         <ContactMap />
       </div>
-    </>
+    </Layout>
   );
 };
 

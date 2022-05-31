@@ -1,5 +1,5 @@
-
 import BlogList from "../../components/blog/BlogList";
+import Layout from "../../components/Layout";
 
 const posts = [
   {
@@ -60,9 +60,9 @@ const posts = [
 
 function BlogListPage() {
   return (
-    <>
+    <Layout>
       <BlogList posts={posts} />
-    </>
+    </Layout>
   );
 }
 
