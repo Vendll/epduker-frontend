@@ -28,147 +28,6 @@ import {
 import logoPic from "../../public/logo.png";
 import NavItem from "./NavItem";
 
-const navigations = {
-  categories: [
-    {
-      id: "women",
-      name: "Termékek",
-      sections: [
-        [
-          {
-            id: "shoes",
-            name: "Shoes & Accessories",
-            items: [
-              { name: "Sneakers", href: "#" },
-              { name: "Boots", href: "#" },
-              { name: "Flats", href: "#" },
-              { name: "Sandals", href: "#" },
-              { name: "Heels", href: "#" },
-              { name: "Socks", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "collection",
-            name: "Shop Collection",
-            items: [
-              { name: "Everything", href: "#" },
-              { name: "Core", href: "#" },
-              { name: "New Arrivals", href: "#" },
-              { name: "Sale", href: "#" },
-              { name: "Accessories", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "shoes",
-            name: "Shoes & Accessories",
-            items: [
-              { name: "Sneakers", href: "#" },
-              { name: "Boots", href: "#" },
-              { name: "Flats", href: "#" },
-              { name: "Sandals", href: "#" },
-              { name: "Heels", href: "#" },
-              { name: "Socks", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "collection",
-            name: "Shop Collection",
-            items: [
-              { name: "Everything", href: "#" },
-              { name: "Core", href: "#" },
-              { name: "New Arrivals", href: "#" },
-              { name: "Sale", href: "#" },
-              { name: "Accessories", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "clothing",
-            name: "All Clothing",
-            items: [
-              { name: "Basic Tees", href: "#" },
-              { name: "Artwork Tees", href: "#" },
-              { name: "Tops", href: "#" },
-              { name: "Bottoms", href: "#" },
-              { name: "Swimwear", href: "#" },
-              { name: "Underwear", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "accessories",
-            name: "All Accessories",
-            items: [
-              { name: "Watches", href: "#" },
-              { name: "Wallets", href: "#" },
-              { name: "Bags", href: "#" },
-              { name: "Sunglasses", href: "#" },
-              { name: "Hats", href: "#" },
-              { name: "Belts", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "clothing",
-            name: "All Clothing",
-            items: [
-              { name: "Basic Tees", href: "#" },
-              { name: "Artwork Tees", href: "#" },
-              { name: "Tops", href: "#" },
-              { name: "Bottoms", href: "#" },
-              { name: "Swimwear", href: "#" },
-              { name: "Underwear", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "accessories",
-            name: "All Accessories",
-            items: [
-              { name: "Watches", href: "#" },
-              { name: "Wallets", href: "#" },
-              { name: "Bags", href: "#" },
-              { name: "Sunglasses", href: "#" },
-              { name: "Hats", href: "#" },
-              { name: "Belts", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "brands",
-            name: "Brands",
-            items: [
-              { name: "Full Nelson", href: "#" },
-              { name: "My Way", href: "#" },
-              { name: "Re-Arranged", href: "#" },
-              { name: "Counterfeit", href: "#" },
-              { name: "Significant Other", href: "#" },
-            ],
-          },
-        ],
-      ],
-    },
-  ],
-  pages: [
-    { name: "Kezdőlap", href: "/" },
-    { name: "Termékek", href: "#" },
-    { name: "Szolgáltatások", href: "/szolgaltatasok" },
-    { name: "Állásajánlatok", href: "/allasajanlatok" },
-    { name: "Kapcsolat", href: "/kapcsolat" },
-  ],
-};
-
 const navigation = [
   { name: "Kezdőlap", href: "/", current: true },
   {
@@ -227,7 +86,26 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Navbar = () => {
+const Navbar = ({ categories }) => {
+  const navigations = {
+    categories: [
+      {
+        id: "products",
+        name: "Termékek",
+        sections: categories,
+      },
+    ],
+    pages: [
+      { name: "Kezdőlap", href: "/" },
+      { name: "Termékek", href: "#" },
+      { name: "Szolgáltatások", href: "/szolgaltatasok" },
+      { name: "Állásajánlatok", href: "/allasajanlatok" },
+      { name: "Kapcsolat", href: "/kapcsolat" },
+    ],
+  };
+  console.log("=========categories2===================");
+  console.log(categories);
+  console.log("====================================");
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -292,7 +170,7 @@ const Navbar = () => {
                 className="hidden lg:py-4 lg:flex lg:space-x-8"
                 aria-label="Global"
               >
-                <NavItem navigations={navigations} />
+                <NavItem navigations={navigations} categories={categories} />
                 {/* <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
                   <div className="h-full flex space-x-8">
                     {navigations.categories.map((category) => (

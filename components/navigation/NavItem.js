@@ -8,12 +8,9 @@ function classNames(...classes) {
 }
 
 const NavItem = (navigations) => {
-  {
-    /* const itemLen = Object.keys(navigations.categories).length;
-
-if (itemLen < 1) { */
-  }
-  console.log(navigations.navigations.categories);
+  console.log("===============categories3================");
+  console.log(navigations);
+  console.log("====================================");
   return (
     <>
       <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
@@ -50,32 +47,32 @@ if (itemLen < 1) { */
                           <div className="grid grid-cols-3 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
                             {category.sections.map((column, columnIdx) => (
                               <div key={columnIdx} className="space-y-10">
-                                {column.map((section) => (
-                                  <div key={section.name}>
-                                    <p
-                                      id={`${category.id}-${section.id}-heading`}
-                                      className="font-medium text-gray-900"
-                                    >
-                                      {section.name}
-                                    </p>
-                                    <ul
-                                      role="list"
-                                      aria-labelledby={`${category.id}-${section.id}-heading`}
-                                      className="mt-2"
-                                    >
-                                      {section.items.map((item) => (
-                                        <li key={item.name} className="flex">
-                                          <a
-                                            href={item.href}
-                                            className="hover:text-gray-800"
-                                          >
-                                            {item.name}
-                                          </a>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
+                                {console.log("column", column)}
+
+                                <div key={column.title}>
+                                  <p
+                                    id={`${category.id}-${column.slug}-heading`}
+                                    className="font-medium text-gray-900"
+                                  >
+                                    {column.title}
+                                  </p>
+                                  <ul
+                                    role="list"
+                                    aria-labelledby={`${category.id}-${column.slug}-heading`}
+                                    className="mt-2"
+                                  >
+                                    {column.subcategories.map((item) => (
+                                      <li key={item.title} className="flex">
+                                        <a
+                                          href={item.slug}
+                                          className="hover:text-gray-800"
+                                        >
+                                          {item.title}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
                               </div>
                             ))}
                           </div>
