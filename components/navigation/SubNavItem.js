@@ -33,17 +33,17 @@ const SubNavItem = ({ column, category }) => {
         ))}
               
       </ul>
-            
-      {open ? (
-        <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
-                    Több mutatása         
-        </button>
-      ) : (
-        <button onClick={() => setOpen(true)} className="text-epgreen mt-1">
-                    Bezárás         
-        </button>
-      )}
-          
+      {column.subcategories.length > 3 ? (
+        open ? (
+          <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
+                      Több mutatása         
+          </button>
+        ) : (
+          <button onClick={() => setOpen(true)} className="text-epgreen mt-1">
+                      Bezárás         
+          </button>
+        )
+      ) : null}
     </>
   );
 };
