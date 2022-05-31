@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import SubNavItem from "./SubNavItem";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
