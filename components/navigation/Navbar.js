@@ -292,7 +292,8 @@ const Navbar = () => {
                 className="hidden lg:py-4 lg:flex lg:space-x-8"
                 aria-label="Global"
               >
-                <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
+                <NavItem navigations={navigations} />
+                {/* <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
                   <div className="h-full flex space-x-8">
                     {navigations.categories.map((category) => (
                       <Popover key={category.name} className="flex">
@@ -380,7 +381,7 @@ const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                </Popover.Group>
+                </Popover.Group> */}
                 <div className="float-right flex gap-2 text-2xl">
                   <a className="hover:text-epgreen" href="#">
                     <FaFacebook />

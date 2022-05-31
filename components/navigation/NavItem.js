@@ -7,12 +7,97 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavItem = (item) => {
-  const itemLen = Object.keys(item.item.categories).length;
+const NavItem = (navigations) => {
+  {
+    /* const itemLen = Object.keys(navigations.categories).length;
 
-  if (itemLen < 1) {
-    return (
-      <Link key={item.id} href={`/${item.item.slug}`}>
+if (itemLen < 1) { */
+  }
+  console.log(navigations.navigations.categories);
+  return (
+    <>
+      <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
+        <div className="h-full flex space-x-8">
+          {navigations.navigations.categories.map((category) => (
+            <Popover key={category.name} className="flex">
+              {({ open }) => (
+                <>
+                  <div className="relative flex">
+                    <Popover.Button
+                      className={classNames(
+                        open
+                          ? "text-epgreen"
+                          : "text-gray-700 hover:text-epgreen",
+                        "relative z-10 flex items-center justify-center outline-none transition-colors ease-out duration-200 text-base font-medium"
+                      )}
+                    >
+                      {category.name}
+                    </Popover.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Popover.Panel className="absolute top-[7.5rem] border-y border-gray-200 inset-x-0 z-50">
+                      <div className="relative bg-white">
+                        <div className="max-w-7xl mx-auto px-8">
+                          <div className="grid grid-cols-3 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
+                            {category.sections.map((column, columnIdx) => (
+                              <div key={columnIdx} className="space-y-10">
+                                {column.map((section) => (
+                                  <div key={section.name}>
+                                    <p
+                                      id={`${category.id}-${section.id}-heading`}
+                                      className="font-medium text-gray-900"
+                                    >
+                                      {section.name}
+                                    </p>
+                                    <ul
+                                      role="list"
+                                      aria-labelledby={`${category.id}-${section.id}-heading`}
+                                      className="mt-2"
+                                    >
+                                      {section.items.map((item) => (
+                                        <li key={item.name} className="flex">
+                                          <a
+                                            href={item.href}
+                                            className="hover:text-gray-800"
+                                          >
+                                            {item.name}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+          ))}
+
+          {navigations.navigations.pages.map((page) => (
+            <Link key={page.name} href={page.href}>
+              <a className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen">
+                {page.name}
+              </a>
+            </Link>
+          ))}
+        </div>
+      </Popover.Group>
+      {/*  <Link key={item.id} href={`/${item.item.slug}`}>
         <a className="flex flex-col lg:py-6 ml-3 lg:ml-0 font-medium text-lg lg:text-sm lg:flex-row lg:items-center text-bobgray hover:text-bobblue lg:hover:border-b-2 lg:hover:border-bobred">
           {item.item.title}
         </a>
@@ -87,9 +172,9 @@ const NavItem = (item) => {
             )}
           </Popover>
         </div>
-      </Popover.Group>
-    );
-  }
+      </Popover.Group> */}
+    </>
+  );
 };
 
 export default NavItem;
