@@ -217,6 +217,12 @@ export async function getStaticPaths() {
 
   const products = productsData.data;
 
+  products.map((product) => {
+    console.log("====================================");
+    console.log(product.category);
+    console.log("====================================");
+  });
+
   return {
     paths: products.map((product) => {
       return {
