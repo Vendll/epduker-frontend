@@ -49,11 +49,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function CategoryPage({ category, subcategories, products }) {
+function CategoryPage({ category, subcategories, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <Layout>
+    <Layout categories={categories}>
       {/* <ul>
         <li>{category.title}</li>
       </ul>
@@ -183,7 +183,7 @@ function CategoryPage({ category, subcategories, products }) {
                     category.slug
                   )}/${encodeURIComponent(subcategory.slug)}`}
                 >
-                  <a className="text-center border py-4 hover:border-2 hover:py-3">
+                  <a className="text-center border py-4 hover:border-epgreen">
                     {subcategory.title}
                   </a>
                 </Link>
@@ -329,6 +329,11 @@ export async function getStaticProps({ params }) {
       slug: params.kategoria,
     },
   });
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
 
   const category = categoryData.data[0];
   /* find subcategories */
@@ -351,6 +356,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       category,
+      categories,
       subcategories,
       products,
     },
@@ -361,6 +367,7 @@ export async function getStaticPaths() {
   const directus = new Directus("https://epduker.headwaymakers.hu");
   const categoryData = await directus.items("Category").readByQuery();
   const categories = categoryData.data;
+
   return {
     paths: categories.map((category) => {
       return {

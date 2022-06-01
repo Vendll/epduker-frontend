@@ -118,6 +118,7 @@ const NavItem = (navigations) => {
                             {category.sections.map((column, columnIdx) => (
                               <div key={columnIdx} className="space-y-10">
                                 <div key={column.title}>
+                                  {console.log(column.slug)}
                                   <Link href={`termekek/${column.slug}`}>
                                     <a
                                       id={`${category.id}-${column.slug}-heading`}
