@@ -3,6 +3,9 @@ import Image from "next/image";
 import Layout from "../../../../../components/Layout";
 
 function ProductPage({ product, categories }) {
+  console.log(product.image.id);
+  const prodImage =
+    "https://epduker.headwaymakers.hu/assets/" + product.image.id;
   return (
     <Layout categories={categories}>
       {/* <h1 className="hidden">{product.title}</h1>
@@ -87,7 +90,7 @@ function ProductPage({ product, categories }) {
                   <Image
                     layout="fill"
                     objectFit="cover"
-                    src={product.imageSrc}
+                    src={prodImage}
                     alt="kép helye" /* {product.imageAlt} */
                     className="w-full h-full object-center object-cover"
                   />
@@ -189,7 +192,7 @@ export async function getStaticProps({ params }) {
   const directus = new Directus("https://epduker.headwaymakers.hu");
   /* find product */
   const getProductData = await directus.items("product").readByQuery({
-    fields: ["*.*.*"],
+    fields: ["*.*.*,image"],
     filter: {
       slug: params.termek,
     },
