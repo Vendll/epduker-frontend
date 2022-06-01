@@ -51,24 +51,25 @@ function classNames(...classes) {
 
 function CategoryPage({ category, subcategories, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
+  const prodImage =
+    "https://epduker.headwaymakers.hu/assets/" + products[0].image.id;
   return (
     <Layout categories={categories}>
       {/* <ul>
         <li>{category.title}</li>
-      </ul>
-      <h1>Subcategories</h1>
-      <ul>
+        </ul>
+        <h1>Subcategories</h1>
+        <ul>
         {subcategories.map((subcategory) => (
           <li>{subcategory.title}</li>
-        ))}
-      </ul>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li>{product.title}</li>
-        ))}
-      </ul> */}
+          ))}
+          </ul>
+          <h1>Products</h1>
+          <ul>
+          {products.map((product) => (
+            <li>{product.title}</li>
+            ))}
+          </ul> */}
       <div className="bg-white">
         <div>
           {/* Mobile filter dialog */}
@@ -272,7 +273,7 @@ function CategoryPage({ category, subcategories, products, categories }) {
                     >
                       <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                         <Image
-                          src={product.imageSrc}
+                          src={prodImage}
                           alt={product.imageAlt}
                           layout="fill"
                           objectFit="cover"
@@ -346,6 +347,7 @@ export async function getStaticProps({ params }) {
   /* find products */
   var ids = subcategories.map((subcategory) => subcategory.id);
   const productData = await directus.items("product").readByQuery({
+    fields: ["*.*.*,image"],
     filter: {
       category: {
         _in: ids,

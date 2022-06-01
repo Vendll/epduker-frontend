@@ -51,7 +51,9 @@ function classNames(...classes) {
 
 function SubCategoryPage({ subcategory, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
+  
+  const prodImage =
+    "https://epduker.headwaymakers.hu/assets/" + products[0].image.id;
   return (
     <Layout categories={categories}>
       <div className="bg-white">
@@ -245,7 +247,7 @@ function SubCategoryPage({ subcategory, products, categories }) {
                         <Image
                           layout="fill"
                           objectFit="cover"
-                          src={product.imageSrc}
+                          src={prodImage}
                           alt={product.imageAlt}
                           className="w-full h-full object-center object-cover sm:w-full sm:h-full"
                         />
@@ -254,6 +256,8 @@ function SubCategoryPage({ subcategory, products, categories }) {
                         <h3 className="text-sm font-medium text-gray-900">
                           <Link
                             href={`/termekek/${encodeURIComponent(
+                              product.category.category.slug
+                            )}/${encodeURIComponent(
                               subcategory.slug
                             )}/${encodeURIComponent(product.slug)}`}
                           >
@@ -305,6 +309,7 @@ export async function getStaticProps({ params }) {
   console.log("====================================");
   /* find products */
   const productData = await directus.items("product").readByQuery({
+    fields: ["*.*.*,image"],
     filter: {
       category: subcategory.id,
     },
