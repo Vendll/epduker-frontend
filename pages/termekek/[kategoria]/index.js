@@ -6,6 +6,7 @@ import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../../components/Layout";
+import noImage from "../../../public/bolt.jpg";
 
 const filters = [
   {
@@ -48,11 +49,9 @@ const filters = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
 function CategoryPage({ category, subcategories, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const prodImage =
-    "https://epduker.headwaymakers.hu/assets/" + products[0].image.id;
+
   return (
     <Layout categories={categories}>
       {/* <ul>
@@ -266,30 +265,40 @@ function CategoryPage({ category, subcategories, products, categories }) {
                 </h2>
 
                 <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 xl:grid-cols-3">
-                  {products.map((product, subcategory) => (
+                  {products.map((product) => (
                     <div
                       key={product.id}
                       className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
                     >
                       <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                        <Image
-                          src={prodImage}
-                          alt={product.imageAlt}
-                          layout="fill"
-                          objectFit="cover"
-                          className="w-full h-full object-center object-cover sm:w-full sm:h-full"
-                        />
+                        {product.image ? (
+                          <Image
+                            src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
+                            alt={product.imageAlt}
+                            layout="fill"
+                            objectFit="cover"
+                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                          />
+                        ) : (
+                          <Image
+                            src={noImage}
+                            alt={product.imageAlt}
+                            layout="fill"
+                            objectFit="cover"
+                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                          />
+                        )}
                       </div>
                       <div className="flex-1 p-4 space-y-2 flex flex-col">
                         <h3 className="text-sm font-medium text-gray-900">
                           <Link
                             href={`/termekek/${encodeURIComponent(
-                              category.slug
+                              product.category.category.slug
                             )}/${encodeURIComponent(
-                              subcategory.slug
+                              product.category.slug
                             )}/${encodeURIComponent(product.slug)}`}
                           >
-                            <a href={product.slug}>
+                            <a>
                               <span
                                 aria-hidden="true"
                                 className="absolute inset-0"

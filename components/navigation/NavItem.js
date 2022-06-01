@@ -44,19 +44,19 @@ const NavItem = (navigations) => {
                       <div className="relative bg-white">
                         <div className="max-w-7xl mx-auto px-8">
                           <div className="grid grid-cols-4 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
-                            {category.sections.map((column, columnIdx) => (
-                              <div key={columnIdx} className="space-y-10">
-                                <div key={column.title}>
-                                  <Link href={`termekek/${column.slug}`}>
+                            {category.sections.map((categ, categIdx) => (
+                              <div key={categIdx} className="space-y-10">
+                                <div key={categ.title}>
+                                  <Link href={`/termekek/${categ.slug}`}>
                                     <a
-                                      id={`${category.id}-${column.slug}-heading`}
+                                      id={`${category.id}-${categ.slug}-heading`}
                                       className="font-medium text-gray-900"
                                     >
-                                      {column.title}
+                                      {categ.title}
                                     </a>
                                   </Link>
                                   <SubNavItem
-                                    column={column}
+                                    categ={categ}
                                     category={category}
                                   />
                                 </div>
@@ -115,19 +115,19 @@ const NavItem = (navigations) => {
                       <div className="relative bg-white">
                         <div className="max-w-7xl mx-auto px-8">
                           <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 py-4 text-lg text-gray-500">
-                            {category.sections.map((column, columnIdx) => (
-                              <div key={columnIdx} className="space-y-10">
-                                <div key={column.title}>
-                                  <Link href={`termekek/${column.slug}`}>
+                            {category.sections.map((categ, categIdx) => (
+                              <div key={categIdx} className="space-y-10">
+                                <div key={categ.title}>
+                                  <Link href={`/termekek/${categ.slug}`}>
                                     <a
-                                      id={`${category.id}-${column.slug}-heading`}
+                                      id={`${category.id}-${categ.slug}-heading`}
                                       className="font-medium text-gray-900"
                                     >
-                                      {column.title}
+                                      {categ.title}
                                     </a>
                                   </Link>
                                   <SubNavItem
-                                    column={column}
+                                    categ={categ}
                                     category={category}
                                   />
                                 </div>

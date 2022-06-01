@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const SubNavItem = ({ column, category }) => {
+const SubNavItem = ({ categ, category }) => {
   const [open, setOpen] = useState(true);
-  const [list, setList] = useState(column.subcategories.slice(0, 3));
+  const [list, setList] = useState(categ.subcategories.slice(0, 3));
 
   useEffect(() => {
     if (open) {
-      setList(column.subcategories.slice(0, 3));
+      setList(categ.subcategories.slice(0, 3));
       console.log(list);
     } else {
-      setList(column.subcategories);
+      setList(categ.subcategories);
       console.log(list);
     }
   }, [open]);
@@ -18,18 +18,18 @@ const SubNavItem = ({ column, category }) => {
     <>
       <ul
         role="list"
-        aria-labelledby={`${category.id}-${column.slug}-heading`}
+        aria-labelledby={`${category.id}-${categ.slug}-heading`}
         className="mt-2"
       >
         {list.map((item) => (
           <li key={item.title} className="flex">
-            <Link href={`/termekek/${column.slug}/${item.slug}`}>
+            <Link href={`/termekek/${categ.slug}/${item.slug}`}>
               <a className="hover:text-gray-800">{item.title}</a>
             </Link>
           </li>
         ))}
       </ul>
-      {column.subcategories.length > 3 ? (
+      {categ.subcategories.length > 3 ? (
         open ? (
           <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
             Több mutatása
