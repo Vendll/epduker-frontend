@@ -118,12 +118,14 @@ const NavItem = (navigations) => {
                             {category.sections.map((column, columnIdx) => (
                               <div key={columnIdx} className="space-y-10">
                                 <div key={column.title}>
-                                  <p
-                                    id={`${category.id}-${column.slug}-heading`}
-                                    className="font-medium text-gray-900"
-                                  >
-                                    {column.title}
-                                  </p>
+                                  <Link href={`termekek/${column.slug}`}>
+                                    <a
+                                      id={`${category.id}-${column.slug}-heading`}
+                                      className="font-medium text-gray-900"
+                                    >
+                                      {column.title}
+                                    </a>
+                                  </Link>
                                   <SubNavItem
                                     column={column}
                                     category={category}
