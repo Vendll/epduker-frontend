@@ -9,9 +9,6 @@ function classNames(...classes) {
 }
 
 const NavItem = (navigations) => {
-  console.log("===============categories3================");
-  console.log(navigations);
-  console.log("====================================");
   return (
     <>
       <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
@@ -48,8 +45,6 @@ const NavItem = (navigations) => {
                           <div className="grid grid-cols-4 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
                             {category.sections.map((column, columnIdx) => (
                               <div key={columnIdx} className="space-y-10">
-                                {console.log("column", column)}
-
                                 <div key={column.title}>
                                   <p
                                     id={`${category.id}-${column.slug}-heading`}

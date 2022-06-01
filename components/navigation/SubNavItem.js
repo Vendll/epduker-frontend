@@ -21,7 +21,10 @@ const SubNavItem = ({ column, category }) => {
       >
         {list.map((item) => (
           <li key={item.title} className="flex">
-            <a href={item.slug} className="hover:text-gray-800">
+            <a
+              href={`termekek/${column.slug}/${item.slug}`}
+              className="hover:text-gray-800"
+            >
               {item.title}
             </a>
           </li>

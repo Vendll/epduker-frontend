@@ -103,9 +103,7 @@ const Navbar = ({ categories }) => {
       { name: "Kapcsolat", href: "/kapcsolat" },
     ],
   };
-  console.log("=========categories2===================");
-  console.log(categories);
-  console.log("====================================");
+
   const [open, setOpen] = useState(false);
   return (
     <>

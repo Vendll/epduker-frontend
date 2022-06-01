@@ -49,21 +49,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function SubCategoryPage({ subcategory, products }) {
+function SubCategoryPage({ subcategory, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <Layout>
-      {/* <h1>Subcategories</h1>
-      <ul>
-        <li>{subcategory.title}</li>
-      </ul>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li>{product.title}</li>
-        ))}
-      </ul> */}
+    <Layout categories={categories}>
       <div className="bg-white">
         <div>
           {/* Mobile filter dialog */}
@@ -320,6 +310,11 @@ export async function getStaticProps({ params }) {
     },
   });
   const products = productData.data;
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
   /*   console.log("=============products=================");
   console.log(productData);
   console.log("====================================");
@@ -327,6 +322,7 @@ export async function getStaticProps({ params }) {
     props: {
       subcategory,
       products,
+      categories,
     },
   };
 }
