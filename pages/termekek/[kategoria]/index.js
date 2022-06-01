@@ -329,6 +329,7 @@ export async function getStaticProps({ params }) {
       slug: params.kategoria,
     },
   });
+
   const category = categoryData.data[0];
   /* find subcategories */
   const subCategoryData = await directus.items("Subcategory").readByQuery({

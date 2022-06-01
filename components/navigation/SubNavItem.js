@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
 const SubNavItem = ({ column, category }) => {
   const [open, setOpen] = useState(true);
   const [list, setList] = useState(column.subcategories.slice(0, 3));
@@ -21,12 +23,9 @@ const SubNavItem = ({ column, category }) => {
       >
         {list.map((item) => (
           <li key={item.title} className="flex">
-            <a
-              href={`termekek/${column.slug}/${item.slug}`}
-              className="hover:text-gray-800"
-            >
-              {item.title}
-            </a>
+            <Link href={`termekek/${column.slug}/${item.slug}`}>
+              <a className="hover:text-gray-800">{item.title}</a>
+            </Link>
           </li>
         ))}
       </ul>

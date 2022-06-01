@@ -169,95 +169,6 @@ const Navbar = ({ categories }) => {
                 aria-label="Global"
               >
                 <NavItem navigations={navigations} categories={categories} />
-                {/* <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
-                  <div className="h-full flex space-x-8">
-                    {navigations.categories.map((category) => (
-                      <Popover key={category.name} className="flex">
-                        {({ open }) => (
-                          <>
-                            <div className="relative flex">
-                              <Popover.Button
-                                className={classNames(
-                                  open
-                                    ? "text-epgreen"
-                                    : "text-gray-700 hover:text-epgreen",
-                                  "relative z-10 flex items-center justify-center outline-none transition-colors ease-out duration-200 text-base font-medium"
-                                )}
-                              >
-                                {category.name}
-                              </Popover.Button>
-                            </div>
-
-                            <Transition
-                              as={Fragment}
-                              enter="transition ease-out duration-200"
-                              enterFrom="opacity-0"
-                              enterTo="opacity-100"
-                              leave="transition ease-in duration-150"
-                              leaveFrom="opacity-100"
-                              leaveTo="opacity-0"
-                            >
-                              <Popover.Panel className="absolute top-[7.5rem] border-y border-gray-200 inset-x-0 z-50">
-                                <div className="relative bg-white">
-                                  <div className="max-w-7xl mx-auto px-8">
-                                    <div className="grid grid-cols-3 gap-y-10 gap-x-8 py-10 text-sm text-gray-500">
-                                      {category.sections.map(
-                                        (column, columnIdx) => (
-                                          <div
-                                            key={columnIdx}
-                                            className="space-y-10"
-                                          >
-                                            {column.map((section) => (
-                                              <div key={section.name}>
-                                                <p
-                                                  id={`${category.id}-${section.id}-heading`}
-                                                  className="font-medium text-gray-900"
-                                                >
-                                                  {section.name}
-                                                </p>
-                                                <ul
-                                                  role="list"
-                                                  aria-labelledby={`${category.id}-${section.id}-heading`}
-                                                  className="mt-2"
-                                                >
-                                                  {section.items.map((item) => (
-                                                    <li
-                                                      key={item.name}
-                                                      className="flex"
-                                                    >
-                                                      <a
-                                                        href={item.href}
-                                                        className="hover:text-gray-800"
-                                                      >
-                                                        {item.name}
-                                                      </a>
-                                                    </li>
-                                                  ))}
-                                                </ul>
-                                              </div>
-                                            ))}
-                                          </div>
-                                        )
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-                              </Popover.Panel>
-                            </Transition>
-                          </>
-                        )}
-                      </Popover>
-                    ))}
-
-                    {navigations.pages.map((page) => (
-                      <Link key={page.name} href={page.href}>
-                        <a className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen">
-                          {page.name}
-                        </a>
-                      </Link>
-                    ))}
-                  </div>
-                </Popover.Group> */}
                 <div className="float-right flex gap-2 text-2xl">
                   <a className="hover:text-epgreen" href="#">
                     <FaFacebook />
@@ -266,23 +177,6 @@ const Navbar = ({ categories }) => {
                     <FaInstagram />
                   </a>
                 </div>
-                {/* <NavItem item={navigations} /> */}
-                {/* {navigation.map((item) => (
-                  <Link href={item.href} key={item.id}>
-                    <a
-                      className={classNames(
-                        item.current
-                          ? "bg-gray-100 text-gray-900"
-                          : "text-gray-900 hover:bg-gray-50 hover:text-gray-900",
-                        "rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
-                      )}
-                      aria-current={item.current ? "page" : undefined}
-                    >
-                      {item.name}
-                    </a>
-                  </Link>
-                ))}
-                  */}
               </nav>
             </div>
 
@@ -291,94 +185,7 @@ const Navbar = ({ categories }) => {
               className="lg:hidden"
               aria-label="Global"
             >
-              <Popover.Group className="flex lg:hidden border-y border-gray-200">
-                <div className="h-full  flex flex-col space-y-3 my-4">
-                  {navigations.categories.map((category) => (
-                    <Popover key={category.name} className="flex relative">
-                      {({ open }) => (
-                        <>
-                          <div className="relative flex">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? "text-epgreen"
-                                  : "text-gray-700 hover:text-epgreen",
-                                "relative z-10 text-lg ml-6 flex items-center justify-center transition-colors focus:outline-none ease-out duration-200 text-lg font-medium"
-                              )}
-                            >
-                              {category.name}
-                            </Popover.Button>
-                          </div>
-
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                          >
-                            <Popover.Panel className="absolute w-screen pl-0 top-10 border-y border-gray-200  z-50">
-                              <div className="relative bg-white">
-                                <div className="max-w-7xl mx-auto px-8">
-                                  <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 py-4 text-lg text-gray-500">
-                                    {category.sections.map(
-                                      (column, columnIdx) => (
-                                        <div
-                                          key={columnIdx}
-                                          className="space-y-10"
-                                        >
-                                          {column.map((section) => (
-                                            <div key={section.name}>
-                                              <p
-                                                id={`${category.id}-${section.id}-heading`}
-                                                className="font-medium text-gray-900"
-                                              >
-                                                {section.name}
-                                              </p>
-                                              <ul
-                                                role="list"
-                                                aria-labelledby={`${category.id}-${section.id}-heading`}
-                                                className="mt-2"
-                                              >
-                                                {section.items.map((item) => (
-                                                  <li
-                                                    key={item.name}
-                                                    className="flex ml-3"
-                                                  >
-                                                    <Link href={item.href}>
-                                                      <a className="hover:text-gray-800">
-                                                        {item.name}
-                                                      </a>
-                                                    </Link>
-                                                  </li>
-                                                ))}
-                                              </ul>
-                                            </div>
-                                          ))}
-                                        </div>
-                                      )
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                  ))}
-
-                  {navigations.pages.map((page) => (
-                    <Link key={page.name} href={page.href}>
-                      <a className="flex items-center ml-6 text-lg font-medium text-gray-700 hover:text-epgreen">
-                        {page.name}
-                      </a>
-                    </Link>
-                  ))}
-                </div>
-              </Popover.Group>
+              <NavItem navigations={navigations} categories={categories} />
             </Disclosure.Panel>
           </>
         )}
