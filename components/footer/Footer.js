@@ -21,7 +21,7 @@ const Footer = () => {
           Footer
         </h2>
         <div className=" mx-auto py-12 px-6 sm:px-6 lg:py-16 lg:px-16">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
             <div className="space-y-8 xl:col-span-1 ">
               <div className="relative  h-16">
                 <Image
@@ -42,9 +42,9 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
+            <div className="mt-12 grid sm:grid-cols-2 gap-8 lg:mt-0 lg:col-span-2">
+              <div className="col-span-2 md:col-span-1 sm:grid sm:grid-cols-2 md:gap-8">
+                <div className="text-center md:text-left">
                   <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase">
                     Cégünk
                   </h3>
@@ -61,7 +61,7 @@ const Footer = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-12 md:mt-0">
+                <div className="mt-12 sm:mt-0 text-center md:text-left">
                   <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase">
                     Információk
                   </h3>
