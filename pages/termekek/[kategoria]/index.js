@@ -6,7 +6,7 @@ import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../../components/Layout";
-import noImage from "../../../public/bolt.jpg";
+import noImage from "../../../public/no-image.jpg";
 
 const filters = [
   {
@@ -270,7 +270,7 @@ function CategoryPage({ category, subcategories, products, categories }) {
                       key={product.id}
                       className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
                     >
-                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
+                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:h-96">
                         {product.image ? (
                           <Image
                             src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}

@@ -8,14 +8,15 @@ import ContactForm from "../../components/contact/ContactForm";
 import ContactBody from "../../components/contact/ContactBody";
 import ContactMap from "../../components/contact/ContactMap";
 import Layout from "../../components/Layout";
+import { Directus } from "@directus/sdk";
 
-const ContactsUsPage = ({ page }) => {
+const ContactsUsPage = ({ page, categories }) => {
   /* const router = useRouter();
   if (router.isFallback) {
     return <div>Loading...</div>;
   } */
   return (
-    <Layout>
+    <Layout categories={categories}>
       {/* <SeoHead seo={page.attributes.seo} /> */}
       {/* <div className="h-[36rem] w-1/3 relative ">
         <Image src={contactPic} layout="fill" objectFit="cover" alt="Contact" />
@@ -40,3 +41,19 @@ export default ContactsUsPage;
   return { props: { page } };
 }
  */
+
+export async function getStaticProps({ params }) {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  /* find category */
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}

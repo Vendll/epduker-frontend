@@ -1,5 +1,6 @@
 import BlogList from "../../components/blog/BlogList";
 import Layout from "../../components/Layout";
+import { Directus } from "@directus/sdk";
 
 const posts = [
   {
@@ -58,12 +59,28 @@ const posts = [
   },
 ];
 
-function BlogListPage() {
+function BlogListPage({ categories }) {
   return (
-    <Layout>
+    <Layout categories={categories}>
       <BlogList posts={posts} />
     </Layout>
   );
 }
 
 export default BlogListPage;
+
+export async function getStaticProps({ params }) {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  /* find category */
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}

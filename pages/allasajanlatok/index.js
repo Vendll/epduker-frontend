@@ -5,6 +5,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/solid";
 import Layout from "../../components/Layout";
+import { Directus } from "@directus/sdk";
 
 const positions = [
   {
@@ -23,9 +24,9 @@ const positions = [
   },
 ];
 
-function jobOffers() {
+function jobOffers({ categories }) {
   return (
-    <Layout>
+    <Layout categories={categories}>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl my-8 font-bold text-center">Dolgozz nálunk!</h1>
 
@@ -76,3 +77,19 @@ function jobOffers() {
 }
 
 export default jobOffers;
+
+export async function getStaticProps({ params }) {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  /* find category */
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}

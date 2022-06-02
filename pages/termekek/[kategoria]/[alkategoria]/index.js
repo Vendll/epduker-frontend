@@ -6,6 +6,7 @@ import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../../../components/Layout";
+import noImage from "../../../../public/no-image.jpg";
 
 const filters = [
   {
@@ -241,14 +242,24 @@ function SubCategoryPage({ subcategory, products, categories }) {
                       key={product.id}
                       className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
                     >
-                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                        <Image
-                          layout="fill"
-                          objectFit="cover"
-                          src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
-                          alt={product.imageAlt}
-                          className="w-full h-full object-center object-cover sm:w-full sm:h-full"
-                        />
+                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:h-96">
+                        {product.image ? (
+                          <Image
+                            src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
+                            alt={product.imageAlt}
+                            layout="fill"
+                            objectFit="cover"
+                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                          />
+                        ) : (
+                          <Image
+                            src={noImage}
+                            alt={product.imageAlt}
+                            layout="fill"
+                            objectFit="cover"
+                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                          />
+                        )}
                       </div>
                       <div className="flex-1 p-4 space-y-2 flex flex-col">
                         <h3 className="text-sm font-medium text-gray-900">

@@ -2,6 +2,7 @@ import servicesPic from "../../public/service.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
+import { Directus } from "@directus/sdk";
 
 const collections = [
   {
@@ -36,9 +37,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Szolgaltatasok({ categories }) {
   return (
-    <Layout>
+    <Layout categories={categories}>
       <div className="relative bg-white">
         {/* Background image and overlap */}
         <div
@@ -137,4 +138,20 @@ export default function Example() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  /* find category */
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
+
+  return {
+    props: {
+      categories,
+    },
+  };
 }

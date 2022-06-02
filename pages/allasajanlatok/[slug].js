@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BlogBody from "../../components/blog/BlogDetailBody";
 import Layout from "../../components/Layout";
+import { Directus } from "@directus/sdk";
 
 const post = {
   title: "Raktáros, targoncavezető, áruátvevő",
@@ -20,9 +21,9 @@ const post = {
   },
 };
 
-const PostPage = () => {
+const PostPage = ({ categories }) => {
   return (
-    <Layout>
+    <Layout categories={categories}>
       <div className="bg-gray-50">
         <div aria-hidden="true" className="relative h-96">
           <Image
@@ -70,3 +71,43 @@ export async function getStaticPaths() {
   };
 }
  */
+
+export async function getStaticProps({ params }) {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  /* find category */
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
+  const subCategoryData = await directus.items("Subcategory").readByQuery({
+    fields: ["id", "title", "slug", "category.*"],
+  });
+  const subcategories = subCategoryData.data;
+  /*   console.log("================slug================");
+  console.log(subcategories[0].category.slug);
+  console.log("====================================");
+ */
+  return {
+    paths: subcategories.map((subcategory) => {
+      return {
+        params: {
+          kategoria: subcategory.category.slug,
+          alkategoria: subcategory.slug,
+          slug: subcategory.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
