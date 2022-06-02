@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                  <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase">
                     Cégünk
                   </h3>
                   <ul role="list" className="mt-4 space-y-4">
@@ -53,7 +53,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
+                          className="text-base text-gray-500 hover:text-epgreen"
                         >
                           {item.name}
                         </a>
@@ -62,7 +62,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                  <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase">
                     Információk
                   </h3>
                   <ul role="list" className="mt-4 space-y-4">
@@ -70,7 +70,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
+                          className="text-base text-gray-500 hover:text-epgreen"
                         >
                           {item.name}
                         </a>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
           <div className="mt-12 border-t border-gray-200 pt-8">
             <p className="text-base text-gray-400 xl:text-center">
-              &copy; . All rights reserved.
+              &copy; Epduker 2022. All rights reserved.
             </p>
           </div>
         </div>

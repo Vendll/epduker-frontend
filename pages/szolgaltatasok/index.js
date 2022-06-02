@@ -1,6 +1,5 @@
 import servicesPic from "../../public/service.jpg";
 import Image from "next/image";
-import Link from "next/link";
 import Layout from "../../components/Layout";
 import { Directus } from "@directus/sdk";
 
