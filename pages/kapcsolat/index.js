@@ -4,7 +4,7 @@ import { getPage } from "../../utils/api";
 import SeoHead from "../../components/seo/SeoHead";
  */
 import Image from "next/image";
-import ContactForm from "../../components/contact/ContactForm";
+import ContactForm from "../../components/forms/ContactForm";
 import ContactBody from "../../components/contact/ContactBody";
 import ContactMap from "../../components/contact/ContactMap";
 import Layout from "../../components/Layout";

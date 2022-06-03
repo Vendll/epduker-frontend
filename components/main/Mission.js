@@ -9,6 +9,7 @@ import {
   ChartBarIcon,
   ColorSwatchIcon,
 } from "@heroicons/react/outline";
+import ContactForm from "../forms/ContactForm";
 
 const transferFeatures = [
   {
@@ -107,8 +108,9 @@ const Mission = () => {
             </div>
 
             <div className="mt-10  relative lg:mt-0" aria-hidden="true">
-              <div className="bg-white lg:w-[75%] lg:float-right rounded-md lg:shadow-2xl  py-16 px-4 sm:px-6 lg:col-span-3 lg:py-8 lg:px-8 xl:pl-12">
-                <div className=" mx-auto lg:max-w-none">
+              <div className="bg-white lg:w-[80%] hover:scale-105 duration-600 transition-all lg:float-right rounded-md lg:shadow-2xl">
+                <ContactForm />
+                {/* <div className=" mx-auto lg:max-w-none">
                   <div className=" text-2xl font-semibold mb-8">
                     Lépjen velünk kapcsolatba!
                   </div>
@@ -176,7 +178,7 @@ const Mission = () => {
                       </button>
                     </div>
                   </form>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
