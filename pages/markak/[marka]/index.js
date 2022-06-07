@@ -48,11 +48,11 @@ const filters = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-function BrandPage({ brand, products }) {
+function BrandPage({ brand, products, categories }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <Layout>
+    <Layout categories={categories}>
       {/* <ul>
         <li>{brand.title}</li>
       </ul>
@@ -314,11 +314,17 @@ export async function getStaticProps({ params }) {
     },
   });
   const products = productsData.data;
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
 
   return {
     props: {
       brand,
       products,
+      categories,
     },
   };
 }

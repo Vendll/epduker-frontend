@@ -2,9 +2,9 @@ import { Directus } from "@directus/sdk";
 import Image from "next/image";
 import Layout from "../../../../components/Layout";
 
-function BrandProductPage({ product }) {
+function BrandProductPage({ product, categories }) {
   return (
-    <Layout>
+    <Layout categories={categories}>
       {/* <h1>{product.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: product.description }} /> */}
       <div className="border-t border-gray-200">
@@ -193,9 +193,15 @@ export async function getStaticProps({ params }) {
   });
 
   const product = getProductData.data[0];
+  const categoriesData = await directus.items("Category").readByQuery({
+    fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
+    limit: -1,
+  });
+  const categories = categoriesData.data;
   return {
     props: {
       product,
+      categories,
     },
   };
 }
