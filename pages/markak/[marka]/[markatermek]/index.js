@@ -1,6 +1,7 @@
 import { Directus } from "@directus/sdk";
 import Image from "next/image";
 import Layout from "../../../../components/Layout";
+import noImage from "../../../public/no-image.jpg";
 
 function BrandProductPage({ product, categories }) {
   return (
@@ -81,13 +82,23 @@ function BrandProductPage({ product, categories }) {
               {/* Product image */}
               <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
                 <div className="relative aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                  <Image
-                    src={product.imageSrc}
-                    layout="fill"
-                    objectFit="cover"
-                    alt="kép helye" /* {product.imageAlt} */
-                    className="w-full h-full object-center object-cover"
-                  />
+                  {product.image ? (
+                    <Image
+                      src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
+                      alt={product.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                      className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                    />
+                  ) : (
+                    <Image
+                      src={noImage}
+                      alt={product.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                      className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                    />
+                  )}
                 </div>
               </div>
 
