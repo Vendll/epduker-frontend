@@ -1,7 +1,7 @@
 import { Directus } from "@directus/sdk";
 import Image from "next/image";
 import Layout from "../../../../components/Layout";
-import noImage from "../../../public/no-image.jpg";
+import noImage from "../../../../public/no-image.jpg";
 
 function BrandProductPage({ product, categories }) {
   return (

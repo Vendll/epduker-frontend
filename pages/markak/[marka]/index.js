@@ -6,7 +6,7 @@ import { ChevronDownIcon, PlusSmIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../../components/Layout";
-import noImage from "../../public/no-image.jpg";
+import noImage from "../../../public/no-image.jpg";
 
 const filters = [
   {
