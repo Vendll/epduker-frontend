@@ -96,8 +96,7 @@ const Navbar = ({ categories }) => {
       },
     ],
     pages: [
-      { name: "Kezdőlap", href: "/" },
-      { name: "Termékek", href: "#" },
+      /* { name: "Kezdőlap", href: "/" }, */
       { name: "Szolgáltatások", href: "/szolgaltatasok" },
       { name: "Állásajánlatok", href: "/allasajanlatok" },
       { name: "Kapcsolat", href: "/kapcsolat" },
