@@ -136,6 +136,7 @@ const ContactForm = () => {
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               size="invisible"
               onChange={onReCAPTCHAChange}
+              className="z-10"
             />
             <div>
               <button
