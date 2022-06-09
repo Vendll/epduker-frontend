@@ -1,21 +1,15 @@
-import Link from "next/link";
-import { Popover, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { FaAngleUp, FaAngleDown } from "react-icons/fa";
-import SubNavItem from "./SubNavItem";
+import { Popover } from "@headlessui/react";
+import NavItemIffer from "./NavItemIffer";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-const NavItem = (navigations) => {
+const NavItem = ({ navigations }) => {
   return (
     <>
       {/* PC NAV */}
       <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
         <div className="h-full flex space-x-8">
-          {navigations.navigations.categories.map((category) => (
-            <Popover key={category.name} className="flex">
+          {navigations.categories.map((category) => (
+            <NavItemIffer category={category} />
+            /*  <Popover key={category.name} className="flex">
               {({ open }) => (
                 <>
                   <div className="relative flex">
@@ -69,24 +63,24 @@ const NavItem = (navigations) => {
                   </Transition>
                 </>
               )}
-            </Popover>
+            </Popover> */
           ))}
 
-          {navigations.navigations.pages.map((page) => (
+          {/* {navigations.pages.map((page) => (
             <Link key={page.name} href={page.href}>
               <a className="flex items-center text-base font-medium text-gray-700 hover:text-epgreen">
                 {page.name}
               </a>
             </Link>
-          ))}
+          ))} */}
         </div>
       </Popover.Group>
-
       {/* MOBILE NAV */}
       <Popover.Group className="flex lg:hidden border-y border-gray-200">
         <div className="h-full  flex flex-col space-y-3 my-4">
-          {navigations.navigations.categories.map((category) => (
-            <Popover key={category.name} className="flex relative">
+          {navigations.categories.map((category) => (
+            <NavItemIffer category={category} />
+            /* <Popover key={category.name} className="flex relative">
               {({ open }) => (
                 <>
                   <div className="relative flex">
@@ -140,16 +134,16 @@ const NavItem = (navigations) => {
                   </Transition>
                 </>
               )}
-            </Popover>
+            </Popover> */
           ))}
 
-          {navigations.navigations.pages.map((page) => (
+          {/* {navigations.pages.map((page) => (
             <Link key={page.name} href={page.href}>
               <a className="flex items-center ml-6 text-lg font-medium text-gray-700 hover:text-epgreen">
                 {page.name}
               </a>
             </Link>
-          ))}
+          ))} */}
         </div>
       </Popover.Group>
     </>
