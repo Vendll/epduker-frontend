@@ -8,7 +8,7 @@ const NavItem = ({ navigations }) => {
       <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
         <div className="h-full flex space-x-8">
           {navigations.categories.map((category) => (
-            <NavItemIffer category={category} />
+            <NavItemIffer category={category} key={category.id} />
             /*  <Popover key={category.name} className="flex">
               {({ open }) => (
                 <>
@@ -79,7 +79,7 @@ const NavItem = ({ navigations }) => {
       <Popover.Group className="flex lg:hidden border-y border-gray-200">
         <div className="h-full  flex flex-col space-y-3 my-4">
           {navigations.categories.map((category) => (
-            <NavItemIffer category={category} />
+            <NavItemIffer category={category} key={category.id} />
             /* <Popover key={category.name} className="flex relative">
               {({ open }) => (
                 <>
