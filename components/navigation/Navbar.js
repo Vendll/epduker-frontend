@@ -25,7 +25,7 @@ import {
   ShieldCheckIcon,
   ViewGridIcon,
 } from "@heroicons/react/outline";
-import logoPic from "../../public/logo.png";
+import logoPic from "../../public/logo.svg";
 import NavItem from "./NavItem";
 
 /* const navigation = {
