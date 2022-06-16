@@ -58,7 +58,7 @@ function SubCategoryPage({ subcategory, products, categories }) {
       <div className="bg-white">
         <div>
           {/* Mobile filter dialog */}
-          <Transition.Root show={mobileFiltersOpen} as={Fragment}>
+          {/*  <Transition.Root show={mobileFiltersOpen} as={Fragment}>
             <Dialog
               as="div"
               className="fixed inset-0 flex z-40 lg:hidden"
@@ -100,7 +100,7 @@ function SubCategoryPage({ subcategory, products, categories }) {
                     </button>
                   </div>
 
-                  {/* Filters */}
+                  {/* Filters *}
                   <form className="mt-4">
                     {filters.map((section) => (
                       <Disclosure
@@ -158,7 +158,7 @@ function SubCategoryPage({ subcategory, products, categories }) {
                 </div>
               </Transition.Child>
             </Dialog>
-          </Transition.Root>
+          </Transition.Root> */}
 
           <main className="max-w-2xl mx-auto px-4 lg:max-w-7xl lg:px-8">
             <div className="border-b border-gray-200 pt-10 pb-10">
@@ -171,7 +171,7 @@ function SubCategoryPage({ subcategory, products, categories }) {
             </div>
 
             <div className="pt-12 pb-24 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
-              <aside>
+              {/*  <aside>
                 <h2 className="sr-only">Filters</h2>
 
                 <button
@@ -226,17 +226,17 @@ function SubCategoryPage({ subcategory, products, categories }) {
                     ))}
                   </form>
                 </div>
-              </aside>
+              </aside> */}
 
               <section
                 aria-labelledby="product-heading"
-                className="mt-6 lg:mt-0 lg:col-span-2 xl:col-span-3"
+                className="mt-6 lg:mt-0 sm:col-span-2 lg:col-span-3 xl:col-span-4"
               >
                 <h2 id="product-heading" className="sr-only">
-                  Products
+                  Termékek
                 </h2>
 
-                <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 xl:grid-cols-3">
+                <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-6 sm:gap-y-6 xl:grid-cols-4">
                   {products.map((product) => (
                     <div
                       key={product.id}
