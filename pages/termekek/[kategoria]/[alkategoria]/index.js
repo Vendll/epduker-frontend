@@ -313,10 +313,6 @@ export async function getStaticProps({ params }) {
   });
 
   const subcategory = getSubCategoryData.data[0];
-  /* console.log("=============subcategory=================");
-  console.log(getSubCategoryData);
-  console.log("===================================="); */
-  /* find products */
   const productData = await directus.items("product").readByQuery({
     fields: ["*.*.*,image"],
     filter: {
@@ -329,10 +325,7 @@ export async function getStaticProps({ params }) {
     limit: -1,
   });
   const categories = categoriesData.data;
-  /*   console.log("=============products=================");
-  console.log(productData);
-  console.log("====================================");
- */ return {
+  return {
     props: {
       subcategory,
       products,
@@ -348,10 +341,7 @@ export async function getStaticPaths() {
   });
 
   const subcategories = subCategoryData.data;
-  /*   console.log("================slug================");
-  console.log(subcategories[0].category.slug);
-  console.log("====================================");
- */
+
   return {
     paths: subcategories.map((subcategory) => {
       return {

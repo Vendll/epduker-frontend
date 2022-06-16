@@ -8,7 +8,7 @@ import Blog from "../components/main/Blog";
 import BrandsCloud from "../components/main/BrandsCloud";
 import Layout from "../components/Layout";
 
-export default function Home({ categories }) {
+export default function Home({ categories, posts }) {
   return (
     <Layout categories={categories}>
       <Head>
@@ -21,7 +21,7 @@ export default function Home({ categories }) {
       <Szolgaltatasok />
       <ShortAbout />
       <Mission />
-      <Blog />
+      <Blog posts={posts} />
       <BrandsCloud />
     </Layout>
   );
@@ -35,9 +35,15 @@ export async function getStaticProps({ params }) {
   });
   const categories = categoriesData.data;
 
+  const postsData = await directus.items("post").readByQuery({
+    fields: ["*.*.*"],
+  });
+  const posts = postsData.data;
+
   return {
     props: {
       categories,
+      posts,
     },
   };
 }

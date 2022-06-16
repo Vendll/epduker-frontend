@@ -136,9 +136,7 @@ export async function getStaticProps({ params }) {
   const categories = categoriesData.data;
 
   const product = getProductData.data[0];
-  console.log("====================================");
-  console.log(product);
-  console.log("====================================");
+
   return {
     props: {
       product,

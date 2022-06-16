@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const BlogCard = ({ post }) => {
-  console.log(post);
   return (
     <div
       key={post.title}
@@ -17,7 +16,7 @@ const BlogCard = ({ post }) => {
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
-          <Link href={`/post/${encodeURIComponent(post.slug)}`}>
+          <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
             <a className="block">
               <p className="text-lg font-medium mb-2 text-epgreen hover:underline">
                 {post.title}

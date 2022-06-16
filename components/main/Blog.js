@@ -2,7 +2,7 @@ import { Directus } from "@directus/sdk";
 import Link from "next/link";
 import Image from "next/image";
 
-const posts = [
+/* const posts = [
   {
     title: "Boost your conversion rate",
     href: "#",
@@ -57,9 +57,9 @@ const posts = [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
-];
+]; */
 
-const Blog = () => {
+const Blog = ({ posts }) => {
   return (
     <div className="relative bg-gray-50 pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8">
       <div className="absolute inset-0">
@@ -85,61 +85,27 @@ const Blog = () => {
                 <Image
                   objectFit="cover"
                   layout="fill"
-                  src={post.imageUrl}
+                  src={`https://epduker.headwaymakers.hu/assets/${post.thumbnail.id}`}
                   alt=""
                 />
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-epgreen">
-                    <a href={post.category.href} className="hover:underline">
-                      {post.category.name}
-                    </a>
-                  </p>
-                  <Link href={post.href}>
+                  <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
                     <a className="block mt-2">
-                      <p className="text-xl font-semibold text-gray-900">
+                      <p className="text-lg font-medium mb-2 text-epgreen hover:underline">
                         {post.title}
                       </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {post.description}
-                      </p>
+                      <p className="text-base  text-gray-900">{post.intro}</p>
                     </a>
                   </Link>
                 </div>
-                {/* <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    <a href={post.author.href}>
-                      <span className="sr-only">{post.author.name}</span>
-                      <img
-                        className="h-10 w-10 rounded-full"
-                        src={post.author.imageUrl}
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
-                      <a href={post.author.href} className="hover:underline">
-                        {post.author.name}
-                      </a>
-                    </p>
-                    <div className="flex space-x-1 text-sm text-gray-500">
-                      <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime} read</span>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           ))}
         </div>
         <Link href="/blog" passHref>
-          <button
-            type="submit"
-            className="my-16 py-3 w-full border-2 border-gray-50 hover:shadow-xl hover:border-epgreen text-lg font-medium rounded-md text-white bg-epgreen focus:outline-none"
-          >
+          <button className="my-16 py-3 w-full border-2 border-gray-50 hover:shadow-xl hover:border-epgreen text-lg font-medium rounded-md text-white bg-epgreen focus:outline-none">
             Összes hírünk
           </button>
         </Link>
