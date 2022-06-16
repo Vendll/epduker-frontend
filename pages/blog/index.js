@@ -89,22 +89,3 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-export async function getStaticPaths() {
-  const directus = new Directus("https://epduker.headwaymakers.hu");
-  const postsData = await directus.items("post").readByQuery({
-    fields: ["*.*.*"],
-  });
-
-  const posts = postsData.data;
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
-}

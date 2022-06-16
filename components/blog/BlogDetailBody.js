@@ -7,14 +7,14 @@ const BlogBody = ({ item }) => {
         <h2 className="text-3xl font-extrabold tracking-tight text-bobred sm:text-4xl">
           {item.title}
         </h2>
-        <p className="mt-4 text-bobgray">Published: {item.datetime}</p>
+        <p className="mt-4 text-bobgray">Published: {item.date_of_publication}</p>
       </div>
 
       <div className="relative px-4 sm:px-6 lg:px-8 text-bobgray">
         <div className="text-lg mx-auto">
           <p className="mt-4">{item.description}</p>
           {/* <Blocks
-            data={JSON.parse(item.attributes.body)}
+            data={JSON.parse(item.body)}
             config={{
               code: {
                 className: "language-js",
