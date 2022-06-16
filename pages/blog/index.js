@@ -71,22 +71,40 @@ export default BlogListPage;
 
 export async function getStaticProps({ params }) {
   const directus = new Directus("https://epduker.headwaymakers.hu");
-  /* find category */
+
+  const postsData = await directus.items("post").readByQuery({
+    fields: ["*.*.*"],
+  });
+  const posts = postsData.data;
   const categoriesData = await directus.items("Category").readByQuery({
     fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
     limit: -1,
   });
   const categories = categoriesData.data;
 
+  return {
+    props: {
+      posts,
+      categories,
+    },
+  };
+}
+export async function getStaticPaths() {
+  const directus = new Directus("https://epduker.headwaymakers.hu");
   const postsData = await directus.items("post").readByQuery({
     fields: ["*.*.*"],
   });
+
   const posts = postsData.data;
 
   return {
-    props: {
-      categories,
-      posts,
-    },
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
   };
 }

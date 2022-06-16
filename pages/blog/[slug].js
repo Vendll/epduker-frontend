@@ -22,7 +22,7 @@ const post = {
   },
 };
 
-const PostPage = ({ categories }) => {
+const PostPage = ({ categories, post }) => {
   return (
     <Layout categories={categories}>
       <div className="bg-gray-50">
@@ -76,6 +76,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const directus = new Directus("https://epduker.headwaymakers.hu");
   /* find category */
+  const getPostData = await directus.items("post").readByQuery({
+    fields: ["*.*.*"],
+    filter: {
+      slug: params.slug,
+    },
+  });
+
+  const post = getPostData.data[0];
   const categoriesData = await directus.items("Category").readByQuery({
     fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
     limit: -1,
@@ -84,6 +92,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      post,
       categories,
     },
   };
@@ -91,21 +100,17 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const directus = new Directus("https://epduker.headwaymakers.hu");
-  const subCategoryData = await directus.items("Subcategory").readByQuery({
-    fields: ["id", "title", "slug", "category.*"],
+  const postsData = await directus.items("post").readByQuery({
+    fields: ["*.*.*"],
   });
-  const subcategories = subCategoryData.data;
-  /*   console.log("================slug================");
-  console.log(subcategories[0].category.slug);
-  console.log("====================================");
- */
+
+  const posts = postsData.data;
+
   return {
-    paths: subcategories.map((subcategory) => {
+    paths: posts.map((post) => {
       return {
         params: {
-          kategoria: subcategory.category.slug,
-          alkategoria: subcategory.slug,
-          slug: subcategory.slug,
+          slug: post.slug,
         },
       };
     }),
