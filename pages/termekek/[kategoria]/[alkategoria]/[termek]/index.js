@@ -136,6 +136,9 @@ export async function getStaticProps({ params }) {
   const categories = categoriesData.data;
 
   const product = getProductData.data[0];
+  console.log("====================================");
+  console.log(product);
+  console.log("====================================");
   return {
     props: {
       product,
@@ -148,15 +151,10 @@ export async function getStaticPaths() {
   const directus = new Directus("https://epduker.headwaymakers.hu");
   const productsData = await directus.items("product").readByQuery({
     fields: ["*.*.*"],
+    limit: -1,
   });
 
   const products = productsData.data;
-
-  products.map((product) => {
-    console.log("====================================");
-    console.log(product.category);
-    console.log("====================================");
-  });
 
   return {
     paths: products.map((product) => {
