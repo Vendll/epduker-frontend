@@ -235,51 +235,51 @@ function SubCategoryPage({ subcategory, products, categories }) {
                 <h2 id="product-heading" className="sr-only">
                   Termékek
                 </h2>
-
-                <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-6 sm:gap-y-6 xl:grid-cols-4">
-                  {products.map((product) => (
-                    <div
-                      key={product.id}
-                      className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
-                    >
-                      <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:h-96">
-                        {product.image ? (
-                          <Image
-                            src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
-                            alt={product.imageAlt}
-                            layout="fill"
-                            objectFit="cover"
-                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
-                          />
-                        ) : (
-                          <Image
-                            src={noImage}
-                            alt={product.imageAlt}
-                            layout="fill"
-                            objectFit="cover"
-                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
-                          />
-                        )}
-                      </div>
-                      <div className="flex-1 p-4 space-y-2 flex flex-col">
-                        <h3 className="text-sm font-medium text-gray-900">
-                          <Link
-                            href={`/termekek/${encodeURIComponent(
-                              product.category.category.slug
-                            )}/${encodeURIComponent(
-                              product.category.slug
-                            )}/${encodeURIComponent(product.slug)}`}
-                          >
-                            <a>
-                              <span
-                                aria-hidden="true"
-                                className="absolute inset-0"
-                              />
-                              {product.title}
-                            </a>
-                          </Link>
-                        </h3>
-                        {/* <p className="text-sm text-gray-500">
+                {products.length > 0 ? (
+                  <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-6 sm:gap-y-6 xl:grid-cols-4">
+                    {products.map((product) => (
+                      <div
+                        key={product.id}
+                        className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
+                      >
+                        <div className="relative aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:h-96">
+                          {product.image ? (
+                            <Image
+                              src={`https://epduker.headwaymakers.hu/assets/${product.image.id}`}
+                              alt={product.imageAlt}
+                              layout="fill"
+                              objectFit="cover"
+                              className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                            />
+                          ) : (
+                            <Image
+                              src={noImage}
+                              alt={product.imageAlt}
+                              layout="fill"
+                              objectFit="cover"
+                              className="w-full h-full object-center object-cover sm:w-full sm:h-full"
+                            />
+                          )}
+                        </div>
+                        <div className="flex-1 p-4 space-y-2 flex flex-col">
+                          <h3 className="text-sm font-medium text-gray-900">
+                            <Link
+                              href={`/termekek/${encodeURIComponent(
+                                product.category.category.slug
+                              )}/${encodeURIComponent(
+                                product.category.slug
+                              )}/${encodeURIComponent(product.slug)}`}
+                            >
+                              <a>
+                                <span
+                                  aria-hidden="true"
+                                  className="absolute inset-0"
+                                />
+                                {product.title}
+                              </a>
+                            </Link>
+                          </h3>
+                          {/* <p className="text-sm text-gray-500">
                         {product.description}
                       </p>
                       <div className="flex-1 flex flex-col justify-end">
@@ -290,10 +290,15 @@ function SubCategoryPage({ subcategory, products, categories }) {
                           {product.price}
                         </p>
                       </div> */}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col justify-center items-center text-lg py-24">
+                    Sajnos kifogytunk a termékekből...
+                  </div>
+                )}
               </section>
             </div>
           </main>
