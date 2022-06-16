@@ -2,7 +2,7 @@ import BlogList from "../../components/blog/BlogList";
 import Layout from "../../components/Layout";
 import { Directus } from "@directus/sdk";
 
-const posts = [
+/* const posts = [
   {
     title: "Boost your conversion rate",
     href: "#",
@@ -57,9 +57,9 @@ const posts = [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
-];
+]; */
 
-function BlogListPage({ categories }) {
+function BlogListPage({ categories, posts }) {
   return (
     <Layout categories={categories}>
       <BlogList posts={posts} />
@@ -78,9 +78,15 @@ export async function getStaticProps({ params }) {
   });
   const categories = categoriesData.data;
 
+  const postsData = await directus.items("post").readByQuery({
+    fields: ["*.*.*"],
+  });
+  const posts = postsData.data;
+
   return {
     props: {
       categories,
+      posts,
     },
   };
 }
