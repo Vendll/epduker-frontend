@@ -84,6 +84,7 @@ export async function getStaticProps({ params }) {
   });
 
   const post = getPostData.data[0];
+
   const categoriesData = await directus.items("Category").readByQuery({
     fields: ["title", "slug", "subcategories.title", "subcategories.slug"],
     limit: -1,

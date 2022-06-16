@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@directus/sdk": "^9.9.1",
-    "@editorjs/editorjs": "^2.24.3",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/aspect-ratio": "^0.4.0",

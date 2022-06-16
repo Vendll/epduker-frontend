@@ -5,16 +5,13 @@ const BlogBody = ({ item }) => {
         <h2 className="text-3xl font-extrabold tracking-tight text-bobred sm:text-4xl">
           {item.title}
         </h2>
-        <p className="mt-4 text-bobgray">
-          Published: {item.date_of_publication}
-        </p>
       </div>
 
-      <div className="relative px-4 sm:px-6 lg:px-8 text-bobgray">
+      <div className="relative px-4 sm:px-6 lg:px-8 text-bobgray mt-6">
         <div className="text-lg mx-auto">
           <div
             className="mt-6"
-            dangerouslySetInnerHTML={{ __html: item.body }}
+            dangerouslySetInnerHTML={{ __html: item.description }}
           ></div>
         </div>
       </div>

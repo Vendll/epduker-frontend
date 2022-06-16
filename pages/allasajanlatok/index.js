@@ -1,30 +1,9 @@
 import Link from "next/link";
-import {
-  CalendarIcon,
-  LocationMarkerIcon,
-  UsersIcon,
-} from "@heroicons/react/solid";
+import { LocationMarkerIcon } from "@heroicons/react/solid";
 import Layout from "../../components/Layout";
 import { Directus } from "@directus/sdk";
 
-const positions = [
-  {
-    id: 1,
-    title: "Raktáros, targoncavezető, áruátvevő",
-    type: "Teljes munkaidős",
-    location: "Dunaújváros",
-    href: "/allasajanlatok/targoncavezetes",
-  },
-  {
-    id: 2,
-    title: "Tégla tesztelő",
-    type: "Részmunkaidős",
-    location: "Dunaújváros",
-    href: "/allasajanlatok/teglateszteles",
-  },
-];
-
-function jobOffers({ categories }) {
+function jobOffers({ categories, joboffers }) {
   return (
     <Layout categories={categories}>
       <div className="flex flex-col items-center justify-center">
@@ -37,9 +16,11 @@ function jobOffers({ categories }) {
             </h3>
           </div>
           <ul role="list" className="divide-y divide-gray-200">
-            {positions.map((position) => (
+            {joboffers.map((position) => (
               <li key={position.id}>
-                <Link href={position.href}>
+                <Link
+                  href={`/allasajanlatok/${encodeURIComponent(position.slug)}`}
+                >
                   <a className="block hover:bg-gray-50">
                     <div className="px-4 py-4 sm:px-6">
                       <div className="flex items-center justify-between">
@@ -87,9 +68,15 @@ export async function getStaticProps({ params }) {
   });
   const categories = categoriesData.data;
 
+  const jobOfferData = await directus.items("job_offering").readByQuery({
+    fields: ["*.*.*"],
+  });
+  const joboffers = jobOfferData.data;
+
   return {
     props: {
       categories,
+      joboffers,
     },
   };
 }
