@@ -58,6 +58,7 @@ const Navbar = ({ categories }) => {
         sections: categories,
       },
       { name: "Szolgáltatások", href: "/szolgaltatasok" },
+      { name: "Hírek", href: "/blog" },
       { name: "Állásajánlatok", href: "/allasajanlatok" },
       { name: "Kapcsolat", href: "/kapcsolat" },
     ],

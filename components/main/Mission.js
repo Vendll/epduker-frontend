@@ -100,7 +100,7 @@ const Mission = () => {
                       </p>
                     </dt>
                     <dd className="mt-2 ml-16 text-base text-gray-500">
-                      {item.description}
+                      {/* {item.description} */}
                     </dd>
                   </div>
                 ))}

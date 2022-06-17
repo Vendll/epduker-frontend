@@ -193,9 +193,9 @@ function CategoryPage({ category, subcategories, products, categories }) {
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">
                 {category.title}
               </h1>
-              <p className="mt-4 text-base text-gray-500">
+              {/*  <p className="mt-4 text-base text-gray-500">
                 Checkout out the possible description field what he might make!
-              </p>
+              </p> */}
             </div>
 
             <div className="pt-12 pb-24 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">

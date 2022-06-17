@@ -23,7 +23,8 @@ const incentives = [
   },
   {
     name: "Pályázati tanácsadás",
-    description: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
+    description:
+      "Segítünk megkeresni a megfelelő pályázatot az Ön projektjeihez.",
     imageSrc: iconFour,
   },
 ];
