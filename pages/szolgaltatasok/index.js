@@ -108,15 +108,15 @@ export default function Szolgaltatasok({ categories }) {
                       </h3>
                       <p className="mt-6 text-base text-gray-500"></p>
                       <div className="mt-8">
-                        <div className="flex items-center">
-                          <h4 className="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-epgreen">
+                        <div className="flex items-center text-center lg:text-left">
+                          <h4 className="lg:flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-epgreen">
                             {collection.desc}
                           </h4>
-                          <div className="flex-1 border-t-2 border-gray-200" />
+                          <div className="lg:flex-1 border-t-2 border-gray-200" />
                         </div>
                       </div>
                     </div>
-                    <div className="py-28 relative bg-gray-50 w-64">
+                    <div className="py-28 relative bg-gray-50 w-full lg:w-64">
                       <div className="absolute inset-8 overflow-hidden">
                         <Image
                           src={collection.imageSrc}
