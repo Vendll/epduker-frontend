@@ -114,31 +114,10 @@ export default function Szolgaltatasok({ categories }) {
                           </h4>
                           <div className="flex-1 border-t-2 border-gray-200" />
                         </div>
-                        <ul
-                          role="list"
-                          className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5"
-                        >
-                          {/* {includedFeatures.map((feature) => (
-                            <li
-                              key={feature}
-                              className="flex items-start lg:col-span-1"
-                            >
-                              <div className="flex-shrink-0">
-                                <CheckCircleIcon
-                                  className="h-5 w-5 text-green-400"
-                                  aria-hidden="true"
-                                />
-                              </div>
-                              <p className="ml-3 text-sm text-gray-700">
-                                {feature}
-                              </p>
-                            </li>
-                          ))} */}
-                        </ul>
                       </div>
                     </div>
-                    <div className="py-8 px-6 relative bg-gray-50 w-64">
-                      <div className="absolute inset-12 left-10 bottom-10  overflow-hidden">
+                    <div className="py-28 relative bg-gray-50 w-64">
+                      <div className="absolute inset-8 overflow-hidden">
                         <Image
                           src={collection.imageSrc}
                           layout="fill"
