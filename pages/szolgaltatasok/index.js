@@ -94,43 +94,62 @@ export default function Szolgaltatasok({ categories }) {
           <h2 id="collection-heading" className="sr-only">
             Collections
           </h2>
-          <div className="max-w-md mx-auto grid grid-cols-1 gap-y-6 px-4 sm:max-w-7xl sm:px-6 sm:grid-cols-4 sm:gap-y-0 sm:gap-x-6 lg:px-8 lg:gap-x-8">
+          <div className="max-w-md mx-auto px-4 sm:max-w-7xl sm:px-6  sm:gap-y-0 sm:gap-x-6 lg:px-8 lg:gap-x-8">
             {collections.map((collection) => (
-              <div
-                key={collection.name}
-                className="group relative h-96 bg-white rounded-lg shadow-xl sm:h-auto sm:aspect-w-4 sm:aspect-h-5"
-              >
-                <div>
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 rounded-lg overflow-hidden"
-                  >
-                    <div className="absolute inset-12 overflow-hidden group-hover:opacity-75">
-                      <Image
-                        src={collection.imageSrc}
-                        layout="fill"
-                        objectFit="contain"
-                        alt={collection.imageAlt}
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20" />
-                  </div>
-                  <div className="absolute inset-0 rounded-lg p-6 flex items-end">
-                    <div>
-                      <p
-                        aria-hidden="true"
-                        className="font-semibold text-epgray"
-                      >
+              <>
+                <div
+                  key={collection.name}
+                  className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-5"
+                >
+                  <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                    <div className="flex-1 bg-white px-6 py-8 lg:p-12">
+                      <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
                         {collection.name}
-                      </p>
-                      <h3 className="mt-1 text-epgray">
-                        <span className="absolute inset-0" />
-                        {collection.desc}
                       </h3>
+                      <p className="mt-6 text-base text-gray-500"></p>
+                      <div className="mt-8">
+                        <div className="flex items-center">
+                          <h4 className="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-epgreen">
+                            {collection.desc}
+                          </h4>
+                          <div className="flex-1 border-t-2 border-gray-200" />
+                        </div>
+                        <ul
+                          role="list"
+                          className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5"
+                        >
+                          {/* {includedFeatures.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start lg:col-span-1"
+                            >
+                              <div className="flex-shrink-0">
+                                <CheckCircleIcon
+                                  className="h-5 w-5 text-green-400"
+                                  aria-hidden="true"
+                                />
+                              </div>
+                              <p className="ml-3 text-sm text-gray-700">
+                                {feature}
+                              </p>
+                            </li>
+                          ))} */}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="py-8 px-6 relative bg-gray-50 w-64">
+                      <div className="absolute inset-12 left-10 bottom-10  overflow-hidden">
+                        <Image
+                          src={collection.imageSrc}
+                          layout="fill"
+                          objectFit="contain"
+                          alt={collection.imageAlt}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </>
             ))}
           </div>
         </section>
