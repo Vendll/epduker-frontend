@@ -303,7 +303,7 @@ function CategoryPage({ category, subcategories, products, categories }) {
                                   aria-hidden="true"
                                   className="absolute inset-0"
                                 />
-                                {product.title}
+                                {product.brand.title} {product.title}
                               </a>
                             </Link>
                           </h3>

@@ -5,6 +5,7 @@ import ProductPageForm from "../../../../../components/forms/ProductPageForm";
 import noImage from "../../../../../public/no-image.jpg";
 
 function ProductPage({ product, categories }) {
+  console.log(product);
   return (
     <Layout categories={categories}>
       {/* <h1 className="hidden">{product.title}</h1>
@@ -48,7 +49,7 @@ function ProductPage({ product, categories }) {
               </nav> */}
                 <div className="mt-4">
                   <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    {product.title}
+                    {product.brand.title} {product.title}
                   </h1>
                 </div>
                 <section aria-labelledby="information-heading" className="mt-4">
@@ -63,12 +64,17 @@ function ProductPage({ product, categories }) {
                 </div> */}
 
                   <div className="mt-4 space-y-6">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: product.description }}
-                      className="text-base text-gray-500"
-                    >
-                      {/* {product.description} */}
-                    </div>
+                    {product.description ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: product.description,
+                        }}
+                        className="text-base text-gray-500"
+                      ></div>
+                    ) : (
+                      <div></div>
+                    )}
+                    {/* {product.description} */}
                   </div>
 
                   {/* <div className="mt-6 flex items-center">
