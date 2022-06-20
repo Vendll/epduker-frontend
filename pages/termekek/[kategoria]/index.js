@@ -376,6 +376,7 @@ export async function getStaticProps({ params }) {
       subcategories,
       products,
     },
+    revalidate: 180,
   };
 }
 
