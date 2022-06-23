@@ -225,12 +225,12 @@ export async function getStaticPaths() {
   });
 
   const products = productsData.data;
-  console.log("====================================");
-  console.log("hey");
-  console.log("====================================");
 
   return {
     paths: products.map((product) => {
+      console.log("====================================");
+      console.log(product.slug);
+      console.log("====================================");
       return {
         params: {
           marka: product.brand.slug,

@@ -11,42 +11,22 @@ import {
   Menu,
   Transition,
 } from "@headlessui/react";
-import {
-  MenuIcon,
-  SearchIcon,
-  ShoppingBagIcon,
-  UserIcon,
-  XIcon,
-  BellIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  DocumentReportIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  ViewGridIcon,
-} from "@heroicons/react/outline";
+import { MenuIcon, SearchIcon, XIcon } from "@heroicons/react/outline";
 import logoPic from "../../public/logo.svg";
 import NavItem from "./NavItem";
-
-/* const navigation = {
-  categories: [
-    {
-      id: "products",
-      name: "Termékek",
-      sections: categories,
-    },
-  ],
-  pages: [
-    /* { name: "Kezdőlap", href: "/" }, *
-    { name: "Szolgáltatások", href: "/szolgaltatasok" },
-    { name: "Állásajánlatok", href: "/allasajanlatok" },
-    { name: "Kapcsolat", href: "/kapcsolat" },
-  ],
-}; */
+import Search from "./Search";
+import { getAlgoliaResults } from "@algolia/autocomplete-js";
+import algoliasearch from "algoliasearch";
+import { Autocomplete } from "./Autocomplate";
+import { ProductItem } from "./ProductItem";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+const appId = process.env.NEXT_PUBLIC_ALGILIA_APP_ID;
+const apiKey = process.env.NEXT_PUBLIC_ALGILIA_SECRET_KEY;
+const searchClient = algoliasearch(appId, apiKey);
 
 const Navbar = ({ categories }) => {
   const navigations = {
@@ -89,28 +69,69 @@ const Navbar = ({ categories }) => {
                     </Link>
                   </div>
                 </div>
-                <div className="relative z-0 flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0">
-                  <div className="w-full sm:w-96 ">
-                    <label htmlFor="search" className="sr-only">
-                      Keresés
-                    </label>
-                    <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
-                        <SearchIcon
-                          className="h-5 w-5 text-gray-400"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <input
-                        id="search"
-                        name="search"
-                        className="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-gray-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-epgreen focus:border-epgreen sm:text-sm"
-                        placeholder="Keresés"
-                        type="search"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <Autocomplete
+                  openOnFocus={true}
+                  getSources={({ query }) => [
+                    {
+                      sourceId: "products",
+                      getItems() {
+                        return getAlgoliaResults({
+                          searchClient,
+                          queries: [
+                            {
+                              indexName: "product",
+                              query,
+                            },
+                          ],
+                        });
+                      },
+                      templates: {
+                        item({ item, components }) {
+                          return (
+                            <div className="aa-ItemWrapper">
+                              <div className="aa-ItemContent">
+                                <div className="aa-ItemIcon">
+                                  <Image
+                                    src={item.image_url}
+                                    alt={item.name}
+                                    width="40"
+                                    height="40"
+                                  />
+                                </div>
+                                <div className="aa-ItemContentBody">
+                                  <a href={`/${item.url}`}>
+                                    <div className="aa-ItemContentTitle">
+                                      <components.Highlight
+                                        hit={item}
+                                        attribute="title"
+                                      />
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                              <div className="aa-ItemActions">
+                                <button
+                                  className="aa-ItemActionButton aa-DesktopOnly aa-ActiveOnly"
+                                  type="button"
+                                  title="Select"
+                                >
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="currentColor"
+                                  >
+                                    <path d="M18.984 6.984h2.016v6h-15.188l3.609 3.609-1.406 1.406-6-6 6-6 1.406 1.406-3.609 3.609h13.172v-4.031z" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        },
+                      },
+                    },
+                  ]}
+                />
                 <div className="relative z-10 flex items-center lg:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">

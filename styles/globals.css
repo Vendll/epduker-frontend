@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -25,4 +26,8 @@ a {
 .swiper-button-next,
 .swiper-button-prev {
   color: rgb(181 200 56) !important;
+}
+
+.aa-Panel {
+  z-index: 50;
 }
