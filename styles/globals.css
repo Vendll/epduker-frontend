@@ -31,3 +31,29 @@ a {
 .aa-Panel {
   z-index: 50;
 }
+.aa-Autocomplete {
+  width: 40%;
+}
+.aa-Autocomplete:focus-within {
+  width: 70% !important;
+  transition: all 0.2s ease-in-out;
+}
+.aa-Form {
+  border-radius: 0.75rem !important;
+  border: 2px solid #b5c838 !important;
+}
+.aa-Form:focus {
+  border-radius: 0.75rem !important;
+  border: 3px solid #b5c838 !important;
+}
+.aa-Form:focus-within {
+  border-color: #b5c838 !important;
+  box-shadow: #b5c838 0 0 0 1px, inset #b5c838 0 0 0 1px !important;
+  outline: none;
+}
+.aa-SubmitIcon {
+  color: #b5c838 !important;
+}
+:root {
+  --aa-icon-stroke-width: 3px !important;
+}

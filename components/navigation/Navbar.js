@@ -19,6 +19,7 @@ import { getAlgoliaResults } from "@algolia/autocomplete-js";
 import algoliasearch from "algoliasearch";
 import { Autocomplete } from "./Autocomplate";
 import { ProductItem } from "./ProductItem";
+import { h } from "preact";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
