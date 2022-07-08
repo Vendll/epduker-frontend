@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const navigation = {
   company: [
-    { name: "Rólunk", href: "#" },
-    { name: "Hírek", href: "#" },
-    { name: "Állásajánlatok", href: "#" },
+    { name: "Hírek", href: "/blog" },
+    { name: "Szolgáltatások", href: "/szolgaltatasok" },
+    { name: "Állásajánlatok", href: "/allasajanlatok" },
   ],
   legal: [
-    { name: "ÁSZF", href: "#" },
-    { name: "GDPR", href: "#" },
+    { name: "ÁSZF", href: "/aszf" },
+    { name: "GDPR", href: "/gdpr" },
   ],
 };
 const Footer = () => {

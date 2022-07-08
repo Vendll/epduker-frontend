@@ -88,20 +88,17 @@ const Mission = () => {
                 Kiemelt célkitűzéseink:
               </h3>
 
-              <dl className="mt-10 space-y-10">
+              <dl className="mt-10 space-y-4">
                 {transferFeatures.map((item) => (
                   <div key={item.id} className="relative">
-                    <dt>
+                    <dt className="relative h-12 ">
                       <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-epgreen text-white">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                      <p className="ml-16 flex items-center h-12 text-lg leading-6 font-medium text-gray-900">
                         {item.name}
                       </p>
                     </dt>
-                    <dd className="mt-2 ml-16 text-base text-gray-500">
-                      {/* {item.description} */}
-                    </dd>
                   </div>
                 ))}
               </dl>

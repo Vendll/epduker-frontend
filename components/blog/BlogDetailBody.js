@@ -6,7 +6,7 @@ const BlogBody = ({ item }) => {
           {item.title}
         </h2>
         <p className="mt-4 text-bobgray">
-          Published: {item.date_of_publication}
+          Megjelent: {item.date_of_publication}
         </p>
       </div>
 

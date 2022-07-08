@@ -41,7 +41,7 @@ const ContactBody = () => {
             <dt className="sr-only">Social</dt>
             <dd className="grid grid-cols gap-y-2">
               <p className="text-lg font-semibold">Nyitvatartás</p>
-              <p>Hétfő-Péntek: 7:00-16:00</p>
+              <p>Hétfő-Péntek: 7:00-17:00</p>
               <p>Szombat: 7:00-12:00</p>
               <p>Vasárnap: Zárva</p>
             </dd>

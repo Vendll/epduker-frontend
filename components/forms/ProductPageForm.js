@@ -70,7 +70,7 @@ const ProductPageForm = ({ product }) => {
       onSubmit={handleSubmit}
     >
       <div className="grid gap-y-6">
-        <h2 className="text-xl text-center font-bold">Megrendelés</h2>
+        <h2 className="text-xl text-center font-bold">Ajánlatkérés</h2>
         <div>
           <label htmlFor="full-name" className="sr-only">
             Teljes név

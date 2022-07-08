@@ -23,13 +23,13 @@ const collections = [
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
   },
-  {
+  /*  {
     name: "Pályázati tanácsadás",
     desc: "Termékeinket darus autóval helyszínre lerakodva szállítjuk.",
     imageSrc: "/consultation.png",
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
-  },
+  }, */
 ];
 
 function classNames(...classes) {
