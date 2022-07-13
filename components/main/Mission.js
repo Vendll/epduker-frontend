@@ -80,7 +80,7 @@ const Mission = () => {
                 falazóelemek, tetőcserepek, víz-és hőszigetelő rendszerek. Mára
                 azonban forgalmazott termékeink körét jelentősen kibővítve
                 egyedi építőanyag kereskedelmi szolgáltatást nyújtunk meglévő,
-                és új partnereinknek. Az Épduferr Zrt. ennek köszönhetően rövid
+                és új partnereinknek. Az Épduferr Nyrt. ennek köszönhetően rövid
                 időn belül rohamos fejlődést ért el, és egyre meghatározóbb
                 szerepet tölt be a piacon.
               </p>

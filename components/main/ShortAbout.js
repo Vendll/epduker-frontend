@@ -32,7 +32,7 @@ const ShortAbout = () => {
                 <p className="text-white">
                   Nálunk mindent egy helyen megtalál, ami egy építkezéshez
                   szükséges: kiváló minőségű építőanyagok – kedvező áron. Az
-                  Épduferr Zrt. évtizedek tapasztalatával a háta mögött kínálja
+                  Épduferr Nyrt. évtizedek tapasztalatával a háta mögött kínálja
                   mindezt Partnerei számára. Ennek szellemében a vásárlói
                   igények ismeretében, tapasztalt munkatársaink készségesen
                   ismertetik a különböző lehetőségeket, bemutatják

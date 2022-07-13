@@ -8,10 +8,8 @@ const SubNavItem = ({ categ, category }) => {
   useEffect(() => {
     if (open) {
       setList(categ.subcategories.slice(0, 3));
-      console.log(list);
     } else {
       setList(categ.subcategories);
-      console.log(list);
     }
   }, [open]);
   return (

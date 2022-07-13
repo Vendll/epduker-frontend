@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { Fragment, useState } from "react";
-
+import { useRouter } from "next/router";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import {
   Dialog,
@@ -45,11 +46,10 @@ const Navbar = ({ categories }) => {
     ],
   };
 
-  const [open, setOpen] = useState(false);
   return (
     <>
       <Disclosure as="header" className="bg-white shadow">
-        {({ open }) => (
+        {({ open, setOpen }) => (
           <>
             <div className="max-w-[106rem] mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
               <div className="relative h-16 flex">

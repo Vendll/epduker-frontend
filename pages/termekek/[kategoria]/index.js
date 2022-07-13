@@ -324,7 +324,7 @@ function CategoryPage({ category, subcategories, products, categories }) {
                   </div>
                 ) : (
                   <div className="flex flex-col justify-center items-center text-lg py-24">
-                    Sajnos kifogytunk a termékekből...
+                    Feltöltés alatt, kérem keresse fel üzletünket.
                   </div>
                 )}
               </section>

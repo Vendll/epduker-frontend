@@ -5,7 +5,6 @@ import ProductPageForm from "../../../../../components/forms/ProductPageForm";
 import noImage from "../../../../../public/no-image.jpg";
 
 function ProductPage({ product, categories }) {
-  console.log(product);
   return (
     <Layout categories={categories}>
       {/* <h1 className="hidden">{product.title}</h1>
