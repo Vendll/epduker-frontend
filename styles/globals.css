@@ -32,11 +32,12 @@ a {
   z-index: 50;
 }
 .aa-Autocomplete {
-  width: 40%;
+  width: 70%;
 }
-.aa-Autocomplete:focus-within {
-  width: 70% !important;
-  transition: all 0.2s ease-in-out;
+@media screen and (max-width: 768px) {
+  .aa-Autocomplete {
+    width: 100%;
+  }
 }
 .aa-Form {
   border-radius: 0.75rem !important;

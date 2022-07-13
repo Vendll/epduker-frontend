@@ -25,7 +25,7 @@ export function Autocomplete(props) {
 
   return (
     <div
-      className="relative z-0 flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0"
+      className="relative z-0 flex-1 px-2 flex items-center justify-center "
       ref={containerRef}
     />
   );
