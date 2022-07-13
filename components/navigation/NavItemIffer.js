@@ -1,19 +1,12 @@
 import SubNavItem from "./SubNavItem";
 import { Popover, Transition, Fragment } from "@headlessui/react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const NavItemIffer = ({ category }) => {
-  {
-    /* const [open, setOpen] = useState(false);
-  useEffect(() => {
-    !open;
-  }, [open]); */
-  }
   if (category.sections) {
     return (
       <>

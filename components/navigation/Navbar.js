@@ -1,23 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { Fragment, useState } from "react";
-import { useRouter } from "next/router";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Disclosure } from "@headlessui/react";
-import { MenuIcon, SearchIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import logoPic from "../../public/logo.svg";
 import NavItem from "./NavItem";
 import Search from "./Search";
 import { getAlgoliaResults } from "@algolia/autocomplete-js";
 import algoliasearch from "algoliasearch";
 import { Autocomplete } from "./Autocomplate";
-import { ProductItem } from "./ProductItem";
-import { h } from "preact";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const appId = process.env.NEXT_PUBLIC_ALGILIA_APP_ID;
 const apiKey = process.env.NEXT_PUBLIC_ALGILIA_SECRET_KEY;
@@ -42,7 +33,7 @@ const Navbar = ({ categories }) => {
   return (
     <>
       <Disclosure as="header" className="bg-white shadow">
-        {({ open, setOpen }) => (
+        {({ open }) => (
           <>
             <div className="max-w-[106rem] mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
               <div className="relative h-16 flex">
