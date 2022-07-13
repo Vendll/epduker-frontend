@@ -4,14 +4,7 @@ import { useEffect } from "react";
 import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import {
-  Dialog,
-  Popover,
-  Tab,
-  Disclosure,
-  Menu,
-  Transition,
-} from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { MenuIcon, SearchIcon, XIcon } from "@heroicons/react/outline";
 import logoPic from "../../public/logo.svg";
 import NavItem from "./NavItem";

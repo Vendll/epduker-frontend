@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
+import { Popover } from "@headlessui/react";
 
 const SubNavItem = ({ categ, category }) => {
-  const [open, setOpen] = useState(true);
+  const [openList, setOpenList] = useState(true);
   const [list, setList] = useState(categ.subcategories.slice(0, 3));
 
   useEffect(() => {
-    if (open) {
+    if (openList) {
       setList(categ.subcategories.slice(0, 3));
     } else {
       setList(categ.subcategories);
     }
-  }, [open]);
+  }, [openList]);
   return (
     <>
       <ul
@@ -20,20 +21,28 @@ const SubNavItem = ({ categ, category }) => {
         className="mt-2"
       >
         {list.map((item) => (
-          <li key={item.title} className="flex">
-            <Link href={`/termekek/${categ.slug}/${item.slug}`}>
-              <a className="hover:text-gray-800">{item.title}</a>
-            </Link>
-          </li>
+          <Popover.Button as="Fragment">
+            <li key={item.title} className="flex">
+              <Link href={`/termekek/${categ.slug}/${item.slug}`}>
+                <a className="hover:text-gray-800">{item.title}</a>
+              </Link>
+            </li>
+          </Popover.Button>
         ))}
       </ul>
       {categ.subcategories.length > 3 ? (
-        open ? (
-          <button onClick={() => setOpen(false)} className="text-epgreen mt-1">
+        openList ? (
+          <button
+            onClick={() => setOpenList(false)}
+            className="text-epgreen mt-1"
+          >
             Több mutatása
           </button>
         ) : (
-          <button onClick={() => setOpen(true)} className="text-epgreen mt-1">
+          <button
+            onClick={() => setOpenList(true)}
+            className="text-epgreen mt-1"
+          >
             Bezárás
           </button>
         )

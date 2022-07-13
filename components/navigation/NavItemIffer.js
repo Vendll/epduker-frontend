@@ -8,10 +8,12 @@ function classNames(...classes) {
 }
 
 const NavItemIffer = ({ category }) => {
-  const [open, setOpen] = useState(false);
+  {
+    /* const [open, setOpen] = useState(false);
   useEffect(() => {
     !open;
-  }, [open]);
+  }, [open]); */
+  }
   if (category.sections) {
     return (
       <>
@@ -45,14 +47,16 @@ const NavItemIffer = ({ category }) => {
                         {category.sections.map((categ, categIdx) => (
                           <div key={categIdx} className="space-y-10">
                             <div key={categ.title}>
-                              <Link href={`/termekek/${categ.slug}`}>
-                                <a
-                                  id={`${category.id}-${categ.slug}-heading`}
-                                  className="font-medium text-gray-900"
-                                >
-                                  {categ.title}
-                                </a>
-                              </Link>
+                              <Popover.Button>
+                                <Link href={`/termekek/${categ.slug}`}>
+                                  <a
+                                    id={`${category.id}-${categ.slug}-heading`}
+                                    className="font-medium text-gray-900"
+                                  >
+                                    {categ.title}
+                                  </a>
+                                </Link>
+                              </Popover.Button>
                               <SubNavItem categ={categ} category={category} />
                             </div>
                           </div>
@@ -96,14 +100,16 @@ const NavItemIffer = ({ category }) => {
                         {category.sections.map((categ, categIdx) => (
                           <div key={categIdx} className="space-y-10">
                             <div key={categ.title}>
-                              <Link href={`/termekek/${categ.slug}`}>
-                                <a
-                                  id={`${category.id}-${categ.slug}-heading`}
-                                  className="font-medium text-gray-900"
-                                >
-                                  {categ.title}
-                                </a>
-                              </Link>
+                              <Popover.Button>
+                                <Link href={`/termekek/${categ.slug}`}>
+                                  <a
+                                    id={`${category.id}-${categ.slug}-heading`}
+                                    className="font-medium text-gray-900"
+                                  >
+                                    {categ.title}
+                                  </a>
+                                </Link>
+                              </Popover.Button>
                               <SubNavItem categ={categ} category={category} />
                             </div>
                           </div>
