@@ -5,9 +5,6 @@ import { Popover } from "@headlessui/react";
 const SubNavItem = ({ categ, category }) => {
   const [openList, setOpenList] = useState(true);
   const [list, setList] = useState(categ.subcategories.slice(0, 3));
-  console.log("====================================");
-  console.log(categ.subcategories.length);
-  console.log("====================================");
 
   useEffect(() => {
     if (openList) {
