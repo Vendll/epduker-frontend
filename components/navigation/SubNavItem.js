@@ -5,6 +5,9 @@ import { Popover } from "@headlessui/react";
 const SubNavItem = ({ categ, category }) => {
   const [openList, setOpenList] = useState(true);
   const [list, setList] = useState(categ.subcategories.slice(0, 3));
+  console.log("====================================");
+  console.log(categ.subcategories.length);
+  console.log("====================================");
 
   useEffect(() => {
     if (openList) {
@@ -21,8 +24,8 @@ const SubNavItem = ({ categ, category }) => {
         className="mt-2"
       >
         {list.map((item) => (
-          <Popover.Button as="Fragment">
-            <li key={item.title} className="flex">
+          <Popover.Button as="Fragment" key={item.title}>
+            <li className="flex">
               <Link href={`/termekek/${categ.slug}/${item.slug}`}>
                 <a className="hover:text-gray-800">{item.title}</a>
               </Link>
