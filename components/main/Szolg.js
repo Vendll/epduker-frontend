@@ -2,7 +2,7 @@ import Image from "next/image";
 import iconOne from "../../public/forklift.png";
 import iconTwo from "../../public/credit-card-2.png";
 import iconThree from "../../public/delivery.png";
-import iconFour from "../../public/consultation.png";
+import iconFour from "../../public/wood.png";
 
 const incentives = [
   {
@@ -22,9 +22,8 @@ const incentives = [
     imageSrc: iconThree,
   },
   {
-    name: "Pályázati tanácsadás",
-    description:
-      "Segítünk megkeresni a megfelelő pályázatot az Ön projektjeihez.",
+    name: "Impregnáló áztatás",
+    description: "Hamarosan faanyag darabolás, gyalulás",
     imageSrc: iconFour,
   },
 ];

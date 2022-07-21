@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Keyboard } from "swiper";
 import SAPic from "../../public/DJI_0139.jpeg";
 import Image from "next/image";
-
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -44,9 +44,14 @@ const Hero = () => {
             <p className="text-6xl md:text-6xl text-[#f4f4f4]">
               Építőipari kereskedés
             </p>
-            <p className="text-2xl md:text-3xl text-[#f4f4f4] font-thin mt-3">
+            <p className="text-2xl md:text-3xl text-[#f4f4f4] font-thin mt-3 mb-8">
               Mindent egy helyen
             </p>
+            <Link href="/termekek">
+              <a className="px-6 py-2 mt-4 rounded-md bg-epgreen/80 hover:bg-epgreen">
+                Ez a gomb
+              </a>
+            </Link>
           </div>
         </SwiperSlide>
         {/* <SwiperSlide className="grid justify-items-center">
